@@ -2,7 +2,7 @@
 
 Heterogeneous neural graph → validation-constrained prune–retrain–rollback → exported equation.
 
-This repository holds the `.NET Framework 4.0` Client (x86) implementation (`src/NnPruneHsm`) and archived seed logs, tables, and figures. The unpublished manuscript is **not** included. Public reuse remains by request to the corresponding author; reviewers receive this snapshot confidentially.
+This repository holds the `.NET Framework 4.0` Client (x86) implementation (`src/NnPruneHsm`) and archived seed logs, tables, and figures. The unpublished manuscript is **not** included.
 
 It is not ordinary weight compression. The measured claim is whether the pruned graph recovers **both structure and coefficients**, with equation-vs-network fidelity.
 
