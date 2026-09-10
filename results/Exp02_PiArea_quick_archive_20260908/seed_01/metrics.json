@@ -1,0 +1,12 @@
+{
+  "seed": 1,
+  "canonical": false,
+  "structural": true,
+  "k_canonical": null,
+  "b": 0,
+  "k_ols": 2.72265191145381,
+  "pi_error": 0.133352979947058,
+  "test_rmse": 1213.72070328769,
+  "fidelity_max": null,
+  "reason": "non-canonical: sigmoid or quadratic-sigmoid remains on the output path"
+}

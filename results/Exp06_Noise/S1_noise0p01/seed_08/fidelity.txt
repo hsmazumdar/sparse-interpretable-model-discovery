@@ -1,0 +1,1 @@
+fidelity_n=90 max_abs=1.55431223447522E-15 mean_abs=8.51170985545953E-16 pass=1 exported equation matches network

@@ -1,0 +1,30 @@
+Manual equation spot-check (1-D)
+================================
+Recompute export independently of UpdateNet; compare to live NN.
+
+Point 1: x_scaled=0.464
+  NN output      = 0.676379376718149
+  |NN-export|    = 1.99840144432528E-15  (OK)
+  notes: exported equation matches network
+
+Point 2: x_scaled=0.604
+  NN output      = 1.1461254689902
+  |NN-export|    = 3.33066907387547E-15  (OK)
+  notes: exported equation matches network
+
+Point 3: x_scaled=0.676
+  NN output      = 1.43566399135372
+  |NN-export|    = 4.21884749357559E-15  (OK)
+  notes: exported equation matches network
+
+Point 4: x_scaled=0.972
+  NN output      = 2.96820747569726
+  |NN-export|    = 7.99360577730113E-15  (OK)
+  notes: exported equation matches network
+
+Point 5: x_scaled=0.108
+  NN output      = 0.0366299367666837
+  |NN-export|    = 2.77555756156289E-16  (OK)
+  notes: exported equation matches network
+
+Summary: manual_pass=True  max|d|=7.99361E-15  tol=1E-08

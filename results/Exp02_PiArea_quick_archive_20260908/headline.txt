@@ -1,0 +1,2 @@
+Exp02 n=2: canonical 0/2 (0 %), structural 2/2, fidelity 0/2, near-zero b 2/2.
+No canonical reductions yet; OLS diagnostic mean k = 2.94391205 (not counted as equation discovery).

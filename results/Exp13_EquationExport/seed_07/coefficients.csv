@@ -1,0 +1,6 @@
+kind,id,src,dst,funno,bias,weight
+neuron,0,,,1,0,
+neuron,1,,,7,0,
+neuron,2,,,1,3.6802393795937E-05,
+edge,,0,1,,1
+edge,,1,2,,3.14165026328409

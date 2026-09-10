@@ -1,0 +1,8 @@
+{
+  "task": "circle",
+  "dense_n": 25,
+  "dense_e": 299,
+  "final_n": 4,
+  "final_e": 3,
+  "fidelity_tol": 1E-08
+}

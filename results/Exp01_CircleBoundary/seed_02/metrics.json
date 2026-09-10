@@ -1,0 +1,13 @@
+{
+  "seed": 2,
+  "canonical": true,
+  "structural": true,
+  "a": -9.57948320085481,
+  "b": -9.57948320085481,
+  "rel_ab": 0,
+  "R_hat": 0.199339530449697,
+  "test_acc": 0.927152317880795,
+  "baseline_acc": 0.970198675496689,
+  "fidelity_max": 0,
+  "reason": "canonical centred quadratic h with a~b"
+}

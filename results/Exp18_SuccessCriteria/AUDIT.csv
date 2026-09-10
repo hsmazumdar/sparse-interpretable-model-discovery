@@ -1,0 +1,66 @@
+check,experiment,status,detail
+code_constant,ExperimentCriteria,PASS,LinearContaminationTol expected=0.05 found=0.05
+code_constant,ExperimentCriteria,PASS,InterceptRelTol expected=0.05 found=0.05
+code_constant,ExperimentCriteria,PASS,FidelityMaxTol expected=1e-08 found=1e-08
+code_constant,ExperimentCriteria,PASS,DegreeEps expected=1e-12 found=1e-12
+code_constant,ExperimentCriteria,PASS,RelAbTol expected=0.1 found=0.1
+pass_e_strip_1.25,runners,PASS,files_with_1.25=12
+seed_log_exists,Exp01_CircleBoundary/seed_logs.csv,PASS,path=K:/PaperSubmissions2026/MathModelNnPaper/Results/Exp01_CircleBoundary/seed_logs.csv
+required_columns,Exp01_CircleBoundary/seed_logs.csv,PASS,ok
+all_seeds_retained,Exp01_CircleBoundary/seed_logs.csv,PASS,rows=30 expected=30 non_canonical_kept=0
+fidelity_pass_matches_tol,Exp01_CircleBoundary/seed_logs.csv,PASS,checked=30 mismatches=0 tol=1e-08
+seed_log_exists,Exp02_PiArea/seed_logs.csv,PASS,path=K:/PaperSubmissions2026/MathModelNnPaper/Results/Exp02_PiArea/seed_logs.csv
+required_columns,Exp02_PiArea/seed_logs.csv,PASS,ok
+all_seeds_retained,Exp02_PiArea/seed_logs.csv,PASS,rows=30 expected=30 non_canonical_kept=0
+fidelity_pass_matches_tol,Exp02_PiArea/seed_logs.csv,PASS,checked=30 mismatches=0 tol=1e-08
+canonical_has_pi_error,Exp02_PiArea/seed_logs.csv,PASS,canonical=30 missing_pi_error=0
+seed_log_exists,Exp03_Circumference/seed_logs.csv,PASS,path=K:/PaperSubmissions2026/MathModelNnPaper/Results/Exp03_Circumference/seed_logs.csv
+required_columns,Exp03_Circumference/seed_logs.csv,PASS,ok
+all_seeds_retained,Exp03_Circumference/seed_logs.csv,PASS,rows=60 expected=60 non_canonical_kept=0
+fidelity_pass_matches_tol,Exp03_Circumference/seed_logs.csv,PASS,checked=60 mismatches=0 tol=1e-08
+canonical_has_two_pi_error,Exp03_Circumference/seed_logs.csv,PASS,canonical=60 missing=0
+seed_log_exists,Exp04_StochasticPi/seed_logs.csv,PASS,path=K:/PaperSubmissions2026/MathModelNnPaper/Results/Exp04_StochasticPi/seed_logs.csv
+required_columns,Exp04_StochasticPi/seed_logs.csv,PASS,ok
+all_seeds_retained,Exp04_StochasticPi/seed_logs.csv,PASS,rows=90 expected=90 non_canonical_kept=3
+fidelity_pass_matches_tol,Exp04_StochasticPi/seed_logs.csv,PASS,checked=90 mismatches=0 tol=1e-08
+canonical_has_pi_error,Exp04_StochasticPi/seed_logs.csv,PASS,canonical=87 missing_pi_error=0
+seed_log_exists,Exp05_SyntheticRecovery/seed_logs.csv,PASS,path=K:/PaperSubmissions2026/MathModelNnPaper/Results/Exp05_SyntheticRecovery/seed_logs.csv
+required_columns,Exp05_SyntheticRecovery/seed_logs.csv,PASS,ok
+all_seeds_retained,Exp05_SyntheticRecovery/seed_logs.csv,PASS,rows=150 expected=150 non_canonical_kept=0
+fidelity_pass_matches_tol,Exp05_SyntheticRecovery/seed_logs.csv,PASS,checked=150 mismatches=0 tol=1e-08
+seed_log_exists,Exp06_Noise/seed_logs.csv,PASS,path=K:/PaperSubmissions2026/MathModelNnPaper/Results/Exp06_Noise/seed_logs.csv
+required_columns,Exp06_Noise/seed_logs.csv,PASS,ok
+all_seeds_retained,Exp06_Noise/seed_logs.csv,PASS,rows=250 expected=250 non_canonical_kept=0
+fidelity_pass_matches_tol,Exp06_Noise/seed_logs.csv,PASS,checked=250 mismatches=0 tol=1e-08
+seed_log_exists,Exp07_OperatorAblation/seed_logs.csv,PASS,path=K:/PaperSubmissions2026/MathModelNnPaper/Results/Exp07_OperatorAblation/seed_logs.csv
+required_columns,Exp07_OperatorAblation/seed_logs.csv,PASS,ok
+all_seeds_retained,Exp07_OperatorAblation/seed_logs.csv,PASS,rows=75 expected=75 non_canonical_kept=53
+canonical_has_pi_error,Exp07_OperatorAblation/seed_logs.csv,WARN,canonical=22 missing_pi_error=3
+seed_log_exists,Exp08_PruningAblation/seed_logs.csv,PASS,path=K:/PaperSubmissions2026/MathModelNnPaper/Results/Exp08_PruningAblation/seed_logs.csv
+required_columns,Exp08_PruningAblation/seed_logs.csv,PASS,ok
+all_seeds_retained,Exp08_PruningAblation/seed_logs.csv,PASS,rows=60 expected=60 non_canonical_kept=39
+canonical_has_pi_error,Exp08_PruningAblation/seed_logs.csv,PASS,canonical=21 missing_pi_error=0
+seed_log_exists,Exp09_NetworkSize/seed_logs.csv,PASS,path=K:/PaperSubmissions2026/MathModelNnPaper/Results/Exp09_NetworkSize/seed_logs.csv
+required_columns,Exp09_NetworkSize/seed_logs.csv,PASS,ok
+all_seeds_retained,Exp09_NetworkSize/seed_logs.csv,PASS,rows=100 expected=100 non_canonical_kept=1
+canonical_has_pi_error,Exp09_NetworkSize/seed_logs.csv,PASS,canonical=99 missing_pi_error=0
+seed_log_exists,Exp10_PruneTolerance/seed_logs.csv,PASS,path=K:/PaperSubmissions2026/MathModelNnPaper/Results/Exp10_PruneTolerance/seed_logs.csv
+required_columns,Exp10_PruneTolerance/seed_logs.csv,PASS,ok
+all_seeds_retained,Exp10_PruneTolerance/seed_logs.csv,PASS,rows=60 expected=60 non_canonical_kept=24
+canonical_has_pi_error,Exp10_PruneTolerance/seed_logs.csv,PASS,canonical=36 missing_pi_error=0
+seed_log_exists,Exp11_Baselines/nn_seed_logs.csv,PASS,path=K:/PaperSubmissions2026/MathModelNnPaper/Results/Exp11_Baselines/nn_seed_logs.csv
+required_columns,Exp11_Baselines/nn_seed_logs.csv,PASS,ok
+all_seeds_retained,Exp11_Baselines/nn_seed_logs.csv,PASS,rows=30 expected=30 non_canonical_kept=20
+canonical_has_pi_error,Exp11_Baselines/nn_seed_logs.csv,PASS,canonical=10 missing_pi_error=0
+seed_log_exists,Exp11_Baselines/sklearn_seed_logs.csv,PASS,path=K:/PaperSubmissions2026/MathModelNnPaper/Results/Exp11_Baselines/sklearn_seed_logs.csv
+required_columns,Exp11_Baselines/sklearn_seed_logs.csv,PASS,ok
+all_seeds_retained,Exp11_Baselines/sklearn_seed_logs.csv,PASS,rows=70 expected=70 non_canonical_kept=50
+canonical_has_pi_error,Exp11_Baselines/sklearn_seed_logs.csv,PASS,canonical=20 missing_pi_error=0
+seed_log_exists,Exp12_CrossProduct/seed_logs.csv,PASS,path=K:/PaperSubmissions2026/MathModelNnPaper/Results/Exp12_CrossProduct/seed_logs.csv
+required_columns,Exp12_CrossProduct/seed_logs.csv,PASS,ok
+all_seeds_retained,Exp12_CrossProduct/seed_logs.csv,PASS,rows=30 expected=30
+exp12_limitation_logic,Exp12_CrossProduct/seed_logs.csv,PASS,non_exact_rows=20 limitation_logic_ok=20
+seed_log_exists,Exp13_EquationExport/seed_logs.csv,PASS,path=K:/PaperSubmissions2026/MathModelNnPaper/Results/Exp13_EquationExport/seed_logs.csv
+required_columns,Exp13_EquationExport/seed_logs.csv,PASS,ok
+all_seeds_retained,Exp13_EquationExport/seed_logs.csv,PASS,rows=13 expected=13 non_canonical_kept=13
+exp13_fidelity_consistency,Exp13_EquationExport/seed_logs.csv,PASS,mismatches=0

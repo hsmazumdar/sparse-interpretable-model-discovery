@@ -1,0 +1,1 @@
+installed train-OLS linear (c0=0.0030638, c1=6.61977, Lval=3.5321E-06)

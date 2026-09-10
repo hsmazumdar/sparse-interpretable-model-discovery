@@ -1,0 +1,15 @@
+{
+  "task": "area",
+  "canonical": "A = 9.74900795702532 + 3.14163352141319 * r^2",
+  "fidelity_pass": true,
+  "fidelity_max_abs": 8.88178419700125E-16,
+  "neurons": [
+    {"id":0,"role":"in","funno":1,"bias":0},
+    {"id":1,"role":"hdn","funno":7,"bias":0},
+    {"id":2,"role":"out","funno":1,"bias":3.89960318281013E-05}
+  ],
+  "edges": [
+    {"src":0,"dst":1,"w":1},
+    {"src":1,"dst":2,"w":3.14163352141319}
+  ]
+}

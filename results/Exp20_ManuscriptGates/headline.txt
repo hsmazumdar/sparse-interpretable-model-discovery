@@ -1,0 +1,13 @@
+Exp20 manuscript rewrite gates — 2026-09-09 22:06:30
+Minimum gates=PASS (10/10 PASS, 0 FAIL)
+Rewrite Results/Discussion: ALLOWED
+  [PASS] 30-seed circle experiment complete: n=30 canonical=30/30
+  [PASS] 30-seed canonical area experiment complete: n=30 canonical=30/30
+  [PASS] equation export verified: n=13 fidelity_pass=13 manual_pass=13
+  [PASS] stochastic convergence experiment complete: rows=90 depths=6 (100,1000,10000,300,3000,30000) canonical=87
+  [PASS] operator ablation complete: rows=75 models=['A', 'B', 'C', 'D', 'E']
+  [PASS] pruning ablation complete: rows=60 settings=['none', 'r0', 'r10k', 'r1k', 'r50k']
+  [PASS] at least four synthetic equations complete: problems=['S1', 'S2', 'S3', 'S4', 'S5'] rows=150
+  [PASS] at least one negative/limitation experiment complete: rows=30 cross_mixed=20 limitation_ok=30/30
+  [PASS] baseline comparison complete: nn=30 sklearn=70 methods=['dtree', 'gboost', 'hsm', 'lasso_poly2', 'linreg', 'mlp_dense', 'mlp_pruned', 'mlp_sk', 'poly2', 'rforest']
+  [PASS] all raw data and scripts archived: missing=0 exp02_seed_dirs=31

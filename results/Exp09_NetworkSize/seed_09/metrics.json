@@ -1,0 +1,10 @@
+{
+  "task": "circle",
+  "hidden": 50,
+  "seed": 9,
+  "canonical": true,
+  "pass_e": true,
+  "test_metric": 0.913907284768212,
+  "final_n": 4,
+  "final_e": 3
+}

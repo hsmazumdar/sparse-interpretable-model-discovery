@@ -1,0 +1,11 @@
+gate,status,detail,evidence
+30-seed circle experiment complete,PASS,n=30 canonical=30/30,Results/Exp01_CircleBoundary/seed_logs.csv
+30-seed canonical area experiment complete,PASS,n=30 canonical=30/30,Results/Exp02_PiArea/seed_logs.csv
+equation export verified,PASS,n=13 fidelity_pass=13 manual_pass=13,Results/Exp13_EquationExport/seed_logs.csv
+stochastic convergence experiment complete,PASS,"rows=90 depths=6 (100,1000,10000,300,3000,30000) canonical=87",Results/Exp04_StochasticPi/seed_logs.csv
+operator ablation complete,PASS,"rows=75 models=['A', 'B', 'C', 'D', 'E']",Results/Exp07_OperatorAblation/seed_logs.csv
+pruning ablation complete,PASS,"rows=60 settings=['none', 'r0', 'r10k', 'r1k', 'r50k']",Results/Exp08_PruningAblation/seed_logs.csv
+at least four synthetic equations complete,PASS,"problems=['S1', 'S2', 'S3', 'S4', 'S5'] rows=150",Results/Exp05_SyntheticRecovery/seed_logs.csv
+at least one negative/limitation experiment complete,PASS,rows=30 cross_mixed=20 limitation_ok=30/30,Results/Exp12_CrossProduct/seed_logs.csv
+baseline comparison complete,PASS,"nn=30 sklearn=70 methods=['dtree', 'gboost', 'hsm', 'lasso_poly2', 'linreg', 'mlp_dense', 'mlp_pruned', 'mlp_sk', 'poly2', 'rforest']",Results/Exp11_Baselines
+all raw data and scripts archived,PASS,missing=0 exp02_seed_dirs=31,Results/ + GitHub_mirror/ + scripts

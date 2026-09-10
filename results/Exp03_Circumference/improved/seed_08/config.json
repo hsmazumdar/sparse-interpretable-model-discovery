@@ -1,0 +1,15 @@
+{
+  "experiment": "Exp03_Circumference",
+  "estimator": "improved",
+  "seed": 8,
+  "hidden": 22,
+  "dense_epochs": 400,
+  "retrain_cycles": 10000,
+  "prune_factor": 1.1,
+  "strip_factor": 1.25,
+  "operator_bank": "circ_discovery_12_3_4_3",
+  "r_max": 500,
+  "y_scale": 500,
+  "split": "70/15/15",
+  "math_pi_in_labels": false
+}

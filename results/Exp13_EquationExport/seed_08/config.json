@@ -1,0 +1,8 @@
+{
+  "task": "area",
+  "dense_n": 24,
+  "dense_e": 276,
+  "final_n": 3,
+  "final_e": 2,
+  "fidelity_tol": 1E-08
+}

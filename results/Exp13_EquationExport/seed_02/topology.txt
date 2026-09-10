@@ -1,0 +1,14 @@
+Graph topology
+--------------
+neurons=4  connections=3  inputs=2  outputs=1
+
+Neurons:
+  n0  role=in  funno=1  bias=0
+  n1  role=in  funno=1  bias=0
+  n2  role=hdn  funno=4  bias=0.380652724011635
+  n3  role=out  funno=1  bias=0
+
+Edges (src -> dst : weight):
+  n0 -> n2 : -9.57948320085481
+  n1 -> n2 : -9.57948320085481
+  n2 -> n3 : 1

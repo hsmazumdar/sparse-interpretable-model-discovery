@@ -1,0 +1,2 @@
+non-canonical
+non-canonical: no r^2 term (c2~0)

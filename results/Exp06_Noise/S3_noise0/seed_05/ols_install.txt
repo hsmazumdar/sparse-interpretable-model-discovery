@@ -1,0 +1,1 @@
+installed train-OLS mixed (c0=-0.7, c1=1.5, c2=2.2, Lval=3.05642E-30)

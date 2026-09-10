@@ -1,0 +1,8 @@
+{
+  "method": "mlp_pruned",
+  "canonical": false,
+  "operator_recovery": false,
+  "test_rmse": 6556.78170118717,
+  "terms": 13,
+  "prior_features": false
+}

@@ -1,0 +1,1 @@
+Exp04 N=100: canonical 15/15, mean k=3.16205985, std=0.0382294, mean |k-pi|/pi=1.1536 %.

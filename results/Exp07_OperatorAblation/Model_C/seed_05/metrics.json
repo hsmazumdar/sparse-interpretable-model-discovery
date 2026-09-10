@@ -1,0 +1,10 @@
+{
+  "model": "C",
+  "seed": 5,
+  "canonical": false,
+  "explicit_r2": true,
+  "test_rmse": 1686.22694997487,
+  "final_neurons": 20,
+  "final_edges": 75,
+  "k": null
+}

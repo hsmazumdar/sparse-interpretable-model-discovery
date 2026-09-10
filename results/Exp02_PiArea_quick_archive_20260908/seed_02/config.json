@@ -1,0 +1,12 @@
+{
+  "experiment": "Exp02_PiArea",
+  "seed": 2,
+  "hidden": 22,
+  "dense_epochs": 80,
+  "retrain_cycles": 10000,
+  "prune_factor": 1.1,
+  "r_max": 120,
+  "y_scale": 14400,
+  "split": "70/15/15",
+  "math_pi_in_labels": false
+}

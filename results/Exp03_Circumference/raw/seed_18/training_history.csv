@@ -1,0 +1,10 @@
+﻿epoch,training_loss,validation_loss,training_accuracy,validation_accuracy,active_neurons,active_connections,learning_rate,random_seed
+1,NaN,NaN,0,0,24,276,0.05,18
+50,NaN,NaN,0,0,24,276,0.05,18
+100,NaN,NaN,0,0,24,276,0.05,18
+150,NaN,NaN,0,0,24,276,0.05,18
+200,NaN,NaN,0,0,24,276,0.05,18
+250,NaN,NaN,0,0,24,276,0.05,18
+300,NaN,NaN,0,0,24,276,0.05,18
+350,NaN,NaN,0,0,24,276,0.05,18
+400,NaN,NaN,0,0,24,276,0.05,18

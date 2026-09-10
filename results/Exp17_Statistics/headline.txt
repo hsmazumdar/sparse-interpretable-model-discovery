@@ -1,0 +1,30 @@
+Exp17 statistical reporting — 2026-09-09 12:15:06
+continuous groups=245, rate groups=183, paired continuous=26, paired binary=23
+
+Structure-recovery (overall cells):
+  Exp01_CircleBoundary canonical: 30/30 = 100.0% (Wilson 95% CI 88.6-100.0%)
+  Exp01_CircleBoundary structural: 30/30 = 100.0% (Wilson 95% CI 88.6-100.0%)
+  Exp01_CircleBoundary fidelity_pass: 30/30 = 100.0% (Wilson 95% CI 88.6-100.0%)
+  Exp02_PiArea canonical: 30/30 = 100.0% (Wilson 95% CI 88.6-100.0%)
+  Exp02_PiArea structural: 30/30 = 100.0% (Wilson 95% CI 88.6-100.0%)
+  Exp02_PiArea fidelity_pass: 30/30 = 100.0% (Wilson 95% CI 88.6-100.0%)
+  Exp05_SyntheticRecovery structure_ok: 150/150 = 100.0% (Wilson 95% CI 97.5-100.0%)
+  Exp05_SyntheticRecovery canonical: 150/150 = 100.0% (Wilson 95% CI 97.5-100.0%)
+  Exp06_Noise structure_ok: 250/250 = 100.0% (Wilson 95% CI 98.5-100.0%)
+  Exp06_Noise canonical: 250/250 = 100.0% (Wilson 95% CI 98.5-100.0%)
+  Exp09_NetworkSize canonical: 99/100 = 99.0% (Wilson 95% CI 94.6-99.8%)
+  Exp13_EquationExport fidelity_pass: 13/13 = 100.0% (Wilson 95% CI 77.2-100.0%)
+  Exp13_EquationExport manual_pass: 13/13 = 100.0% (Wilson 95% CI 77.2-100.0%)
+
+Key paired (Holm-adjusted):
+  Exp01_CircleBoundary quad_bank vs no_quad_baseline [test_acc]: meanDiff=0.115453, dz=1.96597, Wilcoxon p=2.6077e-08, Holm p=2.6077e-08
+  Exp07_OperatorAblation model_A vs model_E [test_rmse]: meanDiff=13140.3, dz=0.775821, Wilcoxon p=6.10352e-05, Holm p=0.000244141
+  Exp11_Baselines hsm vs dtree_noFE [test_rmse]: meanDiff=-6242.24, dz=-11.1022, Wilcoxon p=0.00195312, Holm p=0.0175781
+  Exp11_Baselines hsm vs gboost_noFE [test_rmse]: meanDiff=-4246.26, dz=-8.7711, Wilcoxon p=0.00195312, Holm p=0.0175781
+  Exp11_Baselines hsm vs lasso_poly2_priorFE [test_rmse]: meanDiff=1.65353, dz=0.553001, Wilcoxon p=0.0488281, Holm p=0.0976562
+  Exp11_Baselines hsm vs linreg_noFE [test_rmse]: meanDiff=-48740.1, dz=-9.56778, Wilcoxon p=0.00195312, Holm p=0.0175781
+  Exp11_Baselines hsm vs mlp_dense [test_rmse]: meanDiff=-17650.9, dz=-0.884915, Wilcoxon p=0.00195312, Holm p=0.0175781
+  Exp11_Baselines hsm vs mlp_pruned [test_rmse]: meanDiff=-15689.8, dz=-0.766133, Wilcoxon p=0.00195312, Holm p=0.0175781
+  Exp11_Baselines hsm vs mlp_sk_noFE [test_rmse]: meanDiff=-70929, dz=-1.99818, Wilcoxon p=0.00195312, Holm p=0.0175781
+  Exp11_Baselines hsm vs poly2_priorFE [test_rmse]: meanDiff=1.65516, dz=0.554371, Wilcoxon p=0.0488281, Holm p=0.0976562
+  Exp11_Baselines hsm vs rforest_noFE [test_rmse]: meanDiff=-2898.31, dz=-4.58942, Wilcoxon p=0.00195312, Holm p=0.0175781

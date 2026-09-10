@@ -1,0 +1,10 @@
+item,status,detail,path
+Exp03 circumference,PASS,rows=60,Results/Exp03_Circumference/seed_logs.csv
+Exp06 noise,PASS,rows=250,Results/Exp06_Noise/seed_logs.csv
+Exp09 network size,PASS,rows=100,Results/Exp09_NetworkSize/seed_logs.csv
+Exp10 prune tolerance,PASS,rows=60,Results/Exp10_PruneTolerance/seed_logs.csv
+Exp15 tables,PASS,present,Results/Exp15_ManuscriptTables/ALL_TABLES.md
+Exp16 figures,PASS,present,Results/Exp16_Figures/INDEX.md
+Exp17 statistics,PASS,present,Results/Exp17_Statistics/ALL_STATS.md
+Exp18 criteria,PASS,present,Results/Exp18_SuccessCriteria/AUDIT.md
+Exp19 pi policy,PASS,present,Results/Exp19_PiNeverObjective/AUDIT.md

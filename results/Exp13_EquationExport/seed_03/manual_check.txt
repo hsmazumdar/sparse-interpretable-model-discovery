@@ -1,0 +1,30 @@
+Manual equation spot-check (2-D)
+================================
+Recompute export independently of UpdateNet; compare to live NN.
+
+Point 1: (x,y)=(0.463786070451041,0.467445556292052)
+  NN output      = 0.587213175838119
+  |NN-export|    = 0  (OK)
+  notes: frozen-graph matches network; text parse failed: expected )
+
+Point 2: (x,y)=(0.764082153217905,0.00647379085723022)
+  NN output      = 0.0693742870506503
+  |NN-export|    = 0  (OK)
+  notes: frozen-graph matches network; text parse failed: expected )
+
+Point 3: (x,y)=(0.929625491113228,0.248457391396378)
+  NN output      = 0.12179035578513
+  |NN-export|    = 0  (OK)
+  notes: frozen-graph matches network; text parse failed: expected )
+
+Point 4: (x,y)=(0.894232114727717,0.440241397563481)
+  NN output      = 0.243634657785404
+  |NN-export|    = 0  (OK)
+  notes: frozen-graph matches network; text parse failed: expected )
+
+Point 5: (x,y)=(0.00087132351513548,0.772448239276394)
+  NN output      = 0.0634678184831315
+  |NN-export|    = 0  (OK)
+  notes: frozen-graph matches network; text parse failed: expected )
+
+Summary: manual_pass=True  max|d|=0  tol=1E-08

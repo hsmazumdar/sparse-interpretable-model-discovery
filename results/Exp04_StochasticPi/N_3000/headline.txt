@@ -1,0 +1,1 @@
+Exp04 N=3000: canonical 13/15, mean k=3.14035117, std=0.0136385, mean |k-pi|/pi=0.3193 %.

@@ -1,0 +1,7 @@
+Exp04 total runs=90: canonical 87/90. Depths: 100,300,1000,3000,10000,30000.
+Exp04 N=100: canonical 15/15, mean k=3.16205985, std=0.0382294, mean |k-pi|/pi=1.1536 %.
+Exp04 N=300: canonical 15/15, mean k=3.1421599, std=0.0346329, mean |k-pi|/pi=0.8782 %.
+Exp04 N=1000: canonical 14/15, mean k=3.1439107, std=0.0140527, mean |k-pi|/pi=0.3604 %.
+Exp04 N=3000: canonical 13/15, mean k=3.14035117, std=0.0136385, mean |k-pi|/pi=0.3193 %.
+Exp04 N=10000: canonical 15/15, mean k=3.13973371, std=0.00976839, mean |k-pi|/pi=0.2362 %.
+Exp04 N=30000: canonical 15/15, mean k=3.14070693, std=0.00366409, mean |k-pi|/pi=0.0882 %.

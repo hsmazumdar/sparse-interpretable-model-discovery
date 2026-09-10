@@ -1,0 +1,12 @@
+Graph topology
+--------------
+neurons=3  connections=2  inputs=1  outputs=1
+
+Neurons:
+  n0  role=in  funno=1  bias=0
+  n1  role=hdn  funno=7  bias=0
+  n2  role=out  funno=1  bias=3.6802393795937E-05
+
+Edges (src -> dst : weight):
+  n0 -> n1 : 1
+  n1 -> n2 : 3.14165026328409

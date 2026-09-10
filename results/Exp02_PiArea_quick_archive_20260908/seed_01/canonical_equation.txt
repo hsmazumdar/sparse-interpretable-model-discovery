@@ -1,0 +1,2 @@
+non-canonical
+non-canonical: sigmoid or quadratic-sigmoid remains on the output path

@@ -1,0 +1,12 @@
+{
+  "problem": "S3",
+  "noise": 0.01,
+  "seed": 8,
+  "structure_ok": true,
+  "canonical": true,
+  "max_rel_coeff_err": 0.00304527403028695,
+  "test_rmse": 0.00914297129914895,
+  "test_acc": null,
+  "fidelity_max": 3.5527136788005E-15,
+  "reason": "polynomial reduced; structure OK"
+}

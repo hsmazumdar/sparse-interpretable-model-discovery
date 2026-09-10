@@ -1,0 +1,2 @@
+y = -0.696686523252703 + 1.4788915729903*x + 2.22678345825759*x^2
+polynomial reduced; structure OK

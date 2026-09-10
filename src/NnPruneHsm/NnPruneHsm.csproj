@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8000F35D-B631-441C-BB43-55FC92B4D4E1}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VnnBp</RootNamespace>
+    <AssemblyName>NnPruneHsm</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ImageIO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageIO.designer.cs">
+      <DependentUpon>ImageIO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NetPara.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NetPara.designer.cs">
+      <DependentUpon>NetPara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewData.Designer.cs">
+      <DependentUpon>NewData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NnBpLib\VnnBpConnection.cs" />
+    <Compile Include="NnBpLib\VnnBpLodSav.cs" />
+    <Compile Include="NnBpLib\VnnBpNet.cs" />
+    <Compile Include="NnBpLib\VnnBpNeuron.cs" />
+    <Compile Include="NnBpLib\VnnBpProj.cs" />
+    <Compile Include="NnBpLib\NnMath.cs" />
+    <Compile Include="NnBpLib\GradientCheck.cs" />
+    <Compile Include="NnBpLib\DatasetSplit.cs" />
+            <Compile Include="NnBpLib\NetworkSnapshot.cs" />
+    <Compile Include="NnBpLib\PiDataGenerator.cs" />
+    <Compile Include="NnBpLib\PiNetworkBuilder.cs" />
+    <Compile Include="NnBpLib\PiEquationParser.cs" />
+            <Compile Include="NnBpLib\PiExperimentRunner.cs" />
+            <Compile Include="NnBpLib\CanonicalExtractor.cs" />
+            <Compile Include="NnBpLib\EquationFidelity.cs" />
+            <Compile Include="NnBpLib\GitHubMirrorPublisher.cs" />
+            <Compile Include="NnBpLib\Exp02Runner.cs" />
+            <Compile Include="NnBpLib\Exp03Runner.cs" />
+            <Compile Include="NnBpLib\Exp04Runner.cs" />
+            <Compile Include="NnBpLib\Exp01Runner.cs" />
+            <Compile Include="NnBpLib\Exp05Runner.cs" />
+            <Compile Include="NnBpLib\Exp07Runner.cs" />
+            <Compile Include="NnBpLib\Exp08Runner.cs" />
+            <Compile Include="NnBpLib\Exp09Runner.cs" />
+            <Compile Include="NnBpLib\Exp10Runner.cs" />
+            <Compile Include="NnBpLib\Exp11Runner.cs" />
+            <Compile Include="NnBpLib\Exp12Runner.cs" />
+            <Compile Include="NnBpLib\Exp13Runner.cs" />
+            <Compile Include="NnBpLib\Exp14Runner.cs" />
+            <Compile Include="NnBpLib\Exp16Runner.cs" />
+            <Compile Include="NnBpLib\Exp17Runner.cs" />
+            <Compile Include="NnBpLib\Exp18Runner.cs" />
+            <Compile Include="NnBpLib\Exp19Runner.cs" />
+            <Compile Include="NnBpLib\Exp20Runner.cs" />
+            <Compile Include="NnBpLib\EquationExport.cs" />
+            <Compile Include="NnBpLib\SyntheticProblems.cs" />
+            <Compile Include="NnBpLib\CircleDataGenerator.cs" />
+            <Compile Include="NnBpLib\CircleCanonicalExtractor.cs" />
+    <Compile Include="TrainThisNet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrainThisNet.designer.cs">
+      <DependentUpon>TrainThisNet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VnnBpDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VnnBpDemo.Designer.cs">
+      <DependentUpon>VnnBpDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ImageIO.resx">
+      <DependentUpon>ImageIO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NetPara.resx">
+      <DependentUpon>NetPara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewData.resx">
+      <DependentUpon>NewData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrainThisNet.resx">
+      <DependentUpon>TrainThisNet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VnnBpDemo.resx">
+      <DependentUpon>VnnBpDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ToDo.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

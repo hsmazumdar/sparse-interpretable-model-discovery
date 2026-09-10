@@ -1,0 +1,12 @@
+{
+  "seed": 16,
+  "canonical": true,
+  "structural": true,
+  "k_canonical": 3.14167144879735,
+  "b": 27.3990800254906,
+  "k_ols": 3.14167144879735,
+  "pi_error": 2.50812935504075E-05,
+  "test_rmse": 26.6936521740348,
+  "fidelity_max": 3.10862446895044E-15,
+  "reason": "canonical A = b + k r^2"
+}

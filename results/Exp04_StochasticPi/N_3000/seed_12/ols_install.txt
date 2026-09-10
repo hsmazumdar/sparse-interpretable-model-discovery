@@ -1,0 +1,1 @@
+rejected: OLS quadratic rejected: Lval=0.000208123 > allowed=0.00020103

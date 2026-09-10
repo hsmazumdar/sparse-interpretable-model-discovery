@@ -1,0 +1,101 @@
+{\rtf1\ansi\deff0
+{\fonttbl{\f0 Segoe UI;}{\f1 Consolas;}}
+\fs32\b NnPruneHsm: Reviewer Guide\b0\fs22\par
+\par
+\b 1. Overview\b0\par
+NnPruneHsm is a research prototype for learning an initially over-parameterized heterogeneous neural network and reducing it to a compact graph under a validation-loss constraint. The implementation supports linear, sigmoid, centred-sigmoid and second-order (quadratic-input) neuron behaviour. The research workflow separates training, validation and final testing.\par
+\par
+The pruning transaction is:\par
+1. Save a complete deep snapshot of topology and parameters.\par
+2. Remove the least-magnitude candidate connections.\par
+3. Delete hidden neurons with no active input or no active output.\par
+4. Merge hidden neurons having exactly one active incoming and one active outgoing connection.\par
+5. Validate the resulting graph.\par
+6. Retrain the reduced graph for 10,000 stochastic sample updates using training data only.\par
+7. Evaluate the fixed validation set without changing parameters.\par
+8. Accept the reduction if its validation loss is within the configured limit; otherwise restore the complete snapshot.\par
+\par
+The 10,000 value denotes sample-update cycles, not 10,000 complete dataset epochs. The test split is not used to choose the topology.\par
+\par
+\b 2. Quick Start\b0\par
+Recommended Windows project/data location:\par
+\f1 X:\\NeuralnetHSM\\NnPruneHsm-Now\\Data\f0\par
+\par
+Build and run:\par
+1. Open NnPruneHsm.sln in Visual Studio.\par
+2. Select Debug or Release, x86, and build the solution.\par
+3. Run NnPruneHsm.exe.\par
+\par
+Circle demonstration:\par
+1. Click Sel Net. In the network window use Load Net and select:\par
+\f1 X:\\NeuralnetHSM\\NnPruneHsm-Now\\Data\\HsmCircleNow.net\f0\par
+If this saved topology is unsuitable, select HsmCircle.net or create a 2-input, 1-output network with hidden neurons.\par
+2. Click Sel Data. Click Load Data and select:\par
+\f1 X:\\NeuralnetHSM\\NnPruneHsm-Now\\Data\\HsmCircle.csv\f0\par
+3. Click Train Net. Confirm that the training and validation losses decrease and that no NaN or infinity is reported.\par
+4. Record the dense network's neuron count, connection count, validation loss and classification metrics.\par
+\par
+Pruning:\par
+1. In the training form set the pruning factor. The default 1.1 permits a validation loss up to 1.1 times the original dense-network validation loss (10 percent relative increase).\par
+2. Left-click Prune*. The program prunes candidate connections, cleans the topology, performs 10,000 training-sample updates, and then validates.\par
+3. Wait for the pruning summary. Do not terminate the program during the 10,000-update regeneration stage.\par
+4. Confirm that accepted attempts reduce connections and/or hidden neurons. Rejected attempts must restore the prior topology and parameters.\par
+5. Right-click Prune* only when intentionally requesting restoration of the saved pre-pruning state.\par
+6. Save the accepted network and retain the CSV logs from the executable's logs folder.\par
+\par
+\b 3. Controls and Interpretation\b0\par
+Sel Net: create or load the neural-network topology.\par
+Sel Data: generate or load observations.\par
+Train Net: open the training, evaluation and pruning form.\par
+Help: open this reviewer guide.\par
+Train/Stop: start or stop ordinary dense-network training.\par
+Prune*: initiate transactional structural pruning with post-pruning weight regeneration.\par
+Pruning factor 1.1: accept final validation loss no greater than 110 percent of the fixed dense baseline.\par
+\par
+For classification, report genuine accuracy, precision, recall and F1 together with the confusion matrix. Do not describe 100 minus a regression error as classification accuracy. Also report connection sparsity, neuron sparsity, compression ratio and relative validation-loss change.\par
+\par
+\b 4. Reproducibility and Reviewer Checks\b0\par
+Use a fixed random seed and the same train/validation/test split when comparing dense and pruned models. Pruning decisions must use validation data only. Report the final test result after all pruning and threshold decisions have been completed.\par
+\par
+A reviewer should verify:\par
+- Evaluate and validation-loss functions do not change weights or biases.\par
+- The analytical gradients pass finite-difference checks.\par
+- Every accepted pruning attempt completes 10,000 sample-update cycles.\par
+- A rejected attempt restores neuron count, connection count, endpoints, weights, biases and predictions.\par
+- Input and output neurons are never removed.\par
+- Hidden neurons with zero input or zero output are removed.\par
+- A one-input/one-output hidden neuron is considered for contraction.\par
+- Linear contraction uses the exact product weight and bias transformation.\par
+- Nonlinear contraction is treated as an approximation and retained only after retraining satisfies the validation-loss constraint.\par
+- Network topology validation passes before saving.\par
+\par
+\b 5. Mathematical Definitions\b0\par
+For an ordinary connection into neuron j:\par
+\f1 z_j = b_j + sum_i(w_ij y_i)\f0\par
+For a quadratic-input neuron:\par
+\f1 z_j = b_j + sum_i(w_ij (y_i - 0.5)^2)\f0\par
+For a sigmoid output with binary cross-entropy:\par
+\f1 delta_output = prediction - target\f0\par
+\par
+For exact contraction of a linear hidden neuron j between i and k:\par
+\f1 w_ik(new) = w_jk w_ij\par
+b_k(new) = b_k + w_jk b_j\f0\par
+\par
+Connection sparsity:\par
+\f1 S_E = 1 - E_pruned / E_dense\f0\par
+Neuron sparsity:\par
+\f1 S_V = 1 - V_pruned / V_dense\f0\par
+Compression ratio:\par
+\f1 CR = P_dense / P_pruned\f0\par
+\par
+\b 6. Expected Evidence for Publication\b0\par
+The circle dataset is a functional demonstration, not sufficient evidence by itself for a Q1 claim. Preserve logs and report repeated independent runs, mean and standard deviation, dense-versus-pruned predictive performance, topology size, compression, runtime and extracted equations. Compare against suitable MLP, polynomial/sparse regression, symbolic-regression and modern pruning baselines. Include ablations for neuron operators, pruning, and post-pruning retraining.\par
+\par
+The defensible contribution is a heterogeneous nonlinear network that is progressively simplified into a sparse, explicit mathematical model while controlling validation loss. Avoid claiming exact functional equivalence for contracted nonlinear neurons; their retention is empirical and validation constrained.\par
+\par
+\b 7. Files Produced for Review\b0\par
+The logs folder contains training and pruning histories when logging is enabled. Exported neuron and connection CSV files describe the final graph, and the equation export provides a human-readable representation. Archive the input data, random seed, dense model, pruned model and logs together for every reported experiment.\par
+\par
+\b 8. Limitations\b0\par
+This is a research prototype built on .NET Framework 4.0 and WinForms. Nonlinear one-input/one-output contraction is approximate. Results require repeated-seed evaluation and external baselines. The interface is intended for controlled experiments rather than unattended production deployment.\par
+}

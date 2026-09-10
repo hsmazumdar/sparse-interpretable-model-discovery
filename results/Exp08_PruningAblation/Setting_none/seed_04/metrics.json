@@ -1,0 +1,8 @@
+{
+  "setting": "none",
+  "retrain_cycles": 0,
+  "canonical": false,
+  "val_loss": 1.0006623572342E-06,
+  "test_rmse": 324.051485073352,
+  "final_edges": 276
+}

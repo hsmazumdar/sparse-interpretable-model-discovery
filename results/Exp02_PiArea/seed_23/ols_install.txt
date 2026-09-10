@@ -1,0 +1,1 @@
+installed train-OLS quadratic (c0=3.89966E-05, c2=3.14164, Lval=3.68068E-09)

@@ -1,0 +1,3 @@
+Exp01 n=30: canonical 30/30, structural 30/30, a~b 30/30, fidelity 30/30.
+Mean test acc=93.57 % (quadratic bank) vs baseline no-quad=82.02 %. True R=0.25.
+Mean R_hat=0.206163 (n=27). Mean |a-b| rel (structural)=0.74 %.

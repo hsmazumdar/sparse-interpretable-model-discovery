@@ -1,0 +1,9 @@
+{
+  "factor": 2,
+  "canonical": false,
+  "val_loss": 5.65200044219934E-05,
+  "test_rmse": 2549.04846667436,
+  "compression": 0.949275362318841,
+  "terms": 21,
+  "final_edges": 14
+}

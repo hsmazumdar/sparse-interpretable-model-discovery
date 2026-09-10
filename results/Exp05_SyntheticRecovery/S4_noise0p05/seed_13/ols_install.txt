@@ -1,0 +1,1 @@
+installed diag OLS c0=0.195942 a=1.29856 b=0.801097 Lval=0.00121948

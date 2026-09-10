@@ -1,0 +1,12 @@
+{
+  "problem": "S5",
+  "noise": 0.02,
+  "seed": 1,
+  "structure_ok": true,
+  "canonical": true,
+  "max_rel_coeff_err": 1,
+  "test_rmse": 0.314055561484143,
+  "test_acc": 0.826086956521739,
+  "fidelity_max": 0,
+  "reason": "canonical centred quadratic h with a~b"
+}

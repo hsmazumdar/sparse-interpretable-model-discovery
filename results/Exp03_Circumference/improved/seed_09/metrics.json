@@ -1,0 +1,13 @@
+{
+  "seed": 9,
+  "estimator": "improved",
+  "canonical": true,
+  "structural": true,
+  "k_canonical": 6.62401981135734,
+  "b": 1.13953096233632,
+  "k_ols": 6.62401981135736,
+  "two_pi_error": 0.0542454961161642,
+  "test_rmse": 0.868815549425317,
+  "fidelity_max": 1.77635683940025E-15,
+  "reason": "canonical C = b + k r"
+}

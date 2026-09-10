@@ -1,0 +1,11 @@
+{
+  "problem": "mixed",
+  "expects_exact": false,
+  "structure": false,
+  "explicit_cross": false,
+  "limitation_ok": true,
+  "test_rmse": 0.00188216780311998,
+  "diag_oracle_r2": 0.430159618240748,
+  "full_oracle_r2": 1,
+  "fit_cxy": 1.50066162032105
+}

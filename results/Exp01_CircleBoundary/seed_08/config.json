@@ -1,0 +1,10 @@
+{
+  "experiment": "Exp01_CircleBoundary",
+  "seed": 8,
+  "hidden": 22,
+  "dense_epochs": 150,
+  "R": 0.25,
+  "center": 0.5,
+  "loss": "MeanSquaredError",
+  "math_pi_in_labels": false
+}

@@ -1,0 +1,11 @@
+{
+  "experiment": "Exp04_StochasticPi",
+  "N": 10000,
+  "seed": 9,
+  "hidden": 22,
+  "dense_epochs": 400,
+  "r_max": 500,
+  "y_scale": 250000,
+  "label": "monte_carlo_square_hits",
+  "math_pi_in_labels": false
+}

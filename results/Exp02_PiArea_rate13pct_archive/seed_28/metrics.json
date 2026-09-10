@@ -1,0 +1,12 @@
+{
+  "seed": 28,
+  "canonical": false,
+  "structural": true,
+  "k_canonical": null,
+  "b": 0,
+  "k_ols": 3.14140789426214,
+  "pi_error": 5.88107205570955E-05,
+  "test_rmse": 66.0630750664957,
+  "fidelity_max": 0,
+  "reason": "non-canonical: sigmoid on path; square of degree>1 polynomial"
+}

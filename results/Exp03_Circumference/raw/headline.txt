@@ -1,0 +1,2 @@
+Exp03 n=30: canonical 30/30 (100 %), structural 30/30, fidelity 30/30, near-zero b 30/30.
+Canonical k: mean=6.62740265  std=0.00113376  95% CI [6.62699694, 6.62780836]  best=6.62452769  worst=6.63093685  mean |k-2π|/2π=5.4784 % (n=30).

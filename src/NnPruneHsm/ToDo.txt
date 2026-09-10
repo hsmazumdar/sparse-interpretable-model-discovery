@@ -1,0 +1,4 @@
+﻿1. Circle Data generate		Ok
+2. Circle Image generate	Ok
+3. 'Sel Net' & 'Sel Data' button not opening correct default path
+4. 

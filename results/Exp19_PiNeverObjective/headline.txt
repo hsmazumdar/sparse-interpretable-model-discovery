@@ -1,0 +1,4 @@
+Exp19 pi-never-objective audit — 2026-09-09 12:55:50
+Overall=PASS  PASS=71 FAIL=0 WARN=0
+No executable Math.PI labeling; ReferencePi used only for post-hoc scoring.
+AllowFallback=false on Exp runners; default PiOptions.AllowFallback=false.

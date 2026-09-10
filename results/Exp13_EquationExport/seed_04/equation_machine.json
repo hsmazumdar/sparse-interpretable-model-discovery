@@ -1,0 +1,17 @@
+{
+  "task": "circle",
+  "canonical": "h = 0.404027361090207 + -9.70738385308375*(x-0.5)^2 + -9.70738385308375*(y-0.5)^2",
+  "fidelity_pass": true,
+  "fidelity_max_abs": 0,
+  "neurons": [
+    {"id":0,"role":"in","funno":1,"bias":0},
+    {"id":1,"role":"in","funno":1,"bias":0},
+    {"id":2,"role":"hdn","funno":4,"bias":0.404027361090207},
+    {"id":3,"role":"out","funno":1,"bias":0}
+  ],
+  "edges": [
+    {"src":0,"dst":2,"w":-9.70738385308375},
+    {"src":1,"dst":2,"w":-9.70738385308375},
+    {"src":2,"dst":3,"w":1}
+  ]
+}

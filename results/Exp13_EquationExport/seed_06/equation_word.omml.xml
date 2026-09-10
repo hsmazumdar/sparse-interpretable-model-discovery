@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Word-compatible OMML fragment: insert via Alt+= or Open XML -->
+<m:oMathPara xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math">
+  <m:oMath>
+    <m:r>
+      <m:t xml:space="preserve">A = -3.695617487115 + 3.14169403606243 * r^2</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>

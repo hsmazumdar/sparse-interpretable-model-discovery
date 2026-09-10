@@ -1,0 +1,8 @@
+{
+  "setting": "r10k",
+  "retrain_cycles": 10000,
+  "canonical": false,
+  "val_loss": 1.30003365105841E-06,
+  "test_rmse": 566.2331835496,
+  "final_edges": 35
+}

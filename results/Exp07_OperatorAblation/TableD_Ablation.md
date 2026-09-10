@@ -1,0 +1,9 @@
+# Table D — Operator ablation (area)
+
+| Model | Description | n | Canon % | Explicit r² % | Mean test RMSE | Mean final neurons | Mean final edges | Mean terms | Mean |k-π|/π % |
+|-------|-------------|---|---------|---------------|----------------|--------------------|------------------|------------|----------------|
+| A | lin/sig only + prune | 15 | 0 | 0 | 1.316E+04 | 5.9 | 12.4 | 17.3 | — |
+| B | mixed (quad available) + prune | 15 | 13 | 100 | 1179 | 11.7 | 37.9 | 48.6 | 0.002 |
+| C | square-linear only + prune | 15 | 33 | 100 | NaN | 17.8 | 114.7 | 131.5 | 0.001 |
+| D | mixed, no prune | 15 | 0 | 100 | 1980 | 24.0 | 276.0 | 299.0 | — |
+| E | mixed + prune + Pass E | 15 | 100 | 100 | 20.03 | 3.0 | 2.0 | 4.0 | 0.002 |

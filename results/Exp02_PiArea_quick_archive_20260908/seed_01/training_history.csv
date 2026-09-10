@@ -1,0 +1,4 @@
+﻿epoch,training_loss,validation_loss,training_accuracy,validation_accuracy,active_neurons,active_connections,learning_rate,random_seed
+1,0.215105491728909,0.196936105358152,1,1,24,276,0.05,1
+50,0.00104204368269589,0.0111065421932814,1,1,24,276,0.05,1
+80,0.0168176105019043,3.41443463073775E-05,1,1,24,276,0.05,1

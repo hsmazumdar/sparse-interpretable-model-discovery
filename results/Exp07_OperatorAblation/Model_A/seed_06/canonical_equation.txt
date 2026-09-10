@@ -1,0 +1,2 @@
+non-canonical
+non-canonical: sigmoid on path and active (max|y_nn-y_poly|=1.8365)

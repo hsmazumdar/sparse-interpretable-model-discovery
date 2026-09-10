@@ -1,0 +1,38 @@
+# Experiment 11 — baselines
+
+Exp11 NN runs=30.
+# NN / HSM baselines (area)
+
+| Method | n | Canon % | Op recover % | Mean RMSE | Mean terms | Mean final e | Prior FE | Auto simplify |
+|--------|---|---------|--------------|-----------|------------|--------------|----------|---------------|
+| hsm | 10 | 100 | 100 | 21.55 | 4.0 | 2.0 | no | yes |
+| mlp_dense | 10 | 0 | 0 | 1.767E+04 | 299.0 | 276.0 | no | no |
+| mlp_pruned | 10 | 0 | 0 | 1.571E+04 | 9.4 | 6.1 | no | yes |
+
+Exp11 sklearn runs=70.
+# Sklearn / classical baselines (area)
+
+| Method | n | Canon % | Op recover % | Mean RMSE | Mean terms | Prior FE | Auto simplify |
+|--------|---|---------|--------------|-----------|------------|----------|---------------|
+| linreg | 10 | 0 | 0 | 4.876e+04 | 2.0 | no | no |
+| poly2 | 10 | 100 | 100 | 19.89 | 3.0 | yes | no |
+| lasso_poly2 | 10 | 100 | 100 | 19.89 | 3.0 | yes | yes |
+| dtree | 10 | 0 | 0 | 6264 | 63.7 | no | no |
+| rforest | 10 | 0 | 0 | 2920 | 100.0 | no | no |
+| gboost | 10 | 0 | 0 | 4268 | 100.0 | no | no |
+| mlp_sk | 10 | 0 | 0 | 7.095e+04 | 67.0 | no | no |
+
+# Table — Baselines comparison (area)
+
+| Method | Family | Canon % | Op % | Mean RMSE | Mean terms | Prior FE | Notes |
+|--------|--------|---------|------|-----------|------------|----------|-------|
+| hsm | nn | 100 | 100 | 21.55 | 4.0 | no | HSM |
+| mlp_dense | nn | 0 | 0 | 1.767e+04 | 299.0 | no | no quadratic ops |
+| mlp_pruned | nn | 0 | 0 | 1.571e+04 | 9.4 | no | no quadratic ops |
+| linreg | sklearn | 0 | 0 | 4.876e+04 | 2.0 | no | cannot form r^2 |
+| poly2 | sklearn | 100 | 100 | 19.89 | 3.0 | yes | trivial if FE given |
+| lasso_poly2 | sklearn | 100 | 100 | 19.89 | 3.0 | yes | FE + sparsity |
+| dtree | sklearn | 0 | 0 | 6264 | 63.7 | no | no closed form |
+| rforest | sklearn | 0 | 0 | 2920 | 100.0 | no | no closed form |
+| gboost | sklearn | 0 | 0 | 4268 | 100.0 | no | no closed form |
+| mlp_sk | sklearn | 0 | 0 | 7.095e+04 | 67.0 | no | black-box dense |

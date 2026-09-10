@@ -1,0 +1,24 @@
+comparison,metric,n_pairs,both_true,both_false,a_only,b_only,rate_a,rate_b,mcnemar_p,holm_adj_p,experiment,test_used_for_holm
+raw vs improved,canonical,30,30,0,0,0,1.0,1.0,1.0,,Exp03_Circumference,
+model_A vs model_E,canonical,15,0,0,0,15,0.0,1.0,6.103515625e-05,0.000244140625,Exp07_OperatorAblation,mcnemar_p
+model_B vs model_E,canonical,15,2,0,0,13,0.13333333333333333,1.0,0.000244140625,0.00048828125,Exp07_OperatorAblation,mcnemar_p
+model_C vs model_E,canonical,15,5,0,0,10,0.3333333333333333,1.0,0.001953125,0.001953125,Exp07_OperatorAblation,mcnemar_p
+model_D vs model_E,canonical,15,0,0,0,15,0.0,1.0,6.103515625e-05,0.000244140625,Exp07_OperatorAblation,mcnemar_p
+none vs r50k,canonical,12,0,0,0,12,0.0,1.0,0.00048828125,0.001953125,Exp08_PruningAblation,mcnemar_p
+r0 vs r50k,canonical,12,0,0,0,12,0.0,1.0,0.00048828125,0.001953125,Exp08_PruningAblation,mcnemar_p
+r10k vs r50k,canonical,12,8,0,0,4,0.6666666666666666,1.0,0.125,0.125,Exp08_PruningAblation,mcnemar_p
+r1k vs r50k,canonical,12,1,0,0,11,0.08333333333333333,1.0,0.0009765625,0.001953125,Exp08_PruningAblation,mcnemar_p
+factor_1.05 vs factor_1,canonical,10,5,5,0,0,0.5,0.5,1.0,1.0,Exp10_PruneTolerance,mcnemar_p
+factor_1.1 vs factor_1,canonical,10,5,4,1,0,0.6,0.5,1.0,1.0,Exp10_PruneTolerance,mcnemar_p
+factor_1.25 vs factor_1,canonical,10,5,3,2,0,0.7,0.5,0.5,1.0,Exp10_PruneTolerance,mcnemar_p
+factor_1.5 vs factor_1,canonical,10,4,3,2,1,0.6,0.5,1.0,1.0,Exp10_PruneTolerance,mcnemar_p
+factor_2 vs factor_1,canonical,10,5,3,2,0,0.7,0.5,0.5,1.0,Exp10_PruneTolerance,mcnemar_p
+hsm vs dtree_noFE,operator_recovery,10,0,0,10,0,1.0,0.0,0.001953125,0.017578125,Exp11_Baselines,mcnemar_p
+hsm vs gboost_noFE,operator_recovery,10,0,0,10,0,1.0,0.0,0.001953125,0.017578125,Exp11_Baselines,mcnemar_p
+hsm vs lasso_poly2_priorFE,operator_recovery,10,10,0,0,0,1.0,1.0,1.0,1.0,Exp11_Baselines,mcnemar_p
+hsm vs linreg_noFE,operator_recovery,10,0,0,10,0,1.0,0.0,0.001953125,0.017578125,Exp11_Baselines,mcnemar_p
+hsm vs mlp_dense,operator_recovery,10,0,0,10,0,1.0,0.0,0.001953125,0.017578125,Exp11_Baselines,mcnemar_p
+hsm vs mlp_pruned,operator_recovery,10,0,0,10,0,1.0,0.0,0.001953125,0.017578125,Exp11_Baselines,mcnemar_p
+hsm vs mlp_sk_noFE,operator_recovery,10,0,0,10,0,1.0,0.0,0.001953125,0.017578125,Exp11_Baselines,mcnemar_p
+hsm vs poly2_priorFE,operator_recovery,10,10,0,0,0,1.0,1.0,1.0,1.0,Exp11_Baselines,mcnemar_p
+hsm vs rforest_noFE,operator_recovery,10,0,0,10,0,1.0,0.0,0.001953125,0.017578125,Exp11_Baselines,mcnemar_p

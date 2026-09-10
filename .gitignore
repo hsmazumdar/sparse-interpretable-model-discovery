@@ -1,0 +1,21 @@
+# Unpublished paper drafts must not be placed in this repository.
+*.docx
+*.doc
+manuscript/
+Nn2MathModel*.md
+_build_Nn2MathModel*.py
+
+# Build artifacts
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.userosscache
+packages/
+
+# Secrets
+.env
+.env.*
+*.pfx
+*.snk

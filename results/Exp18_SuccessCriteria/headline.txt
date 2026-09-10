@@ -1,0 +1,6 @@
+Exp18 success-criteria freeze + audit — 2026-09-09 12:49:52
+Overall=PASS  PASS=64 FAIL=0 WARN=1 SKIP=0
+Documented gates: SUCCESS_CRITERIA.md (root + Results/Exp18_SuccessCriteria/)
+Code constants match: LinearContaminationTol=0.05 InterceptRelTol=0.05 FidelityMaxTol=1e-8 RelAbTol=0.10
+Seed logs: all planned Exp01-13 row counts retained; fidelity_pass consistent with 1e-8 where checked.
+Note: Exp07 Model C has 3 canonical flags with null k (logged, not dropped) — WARN only.

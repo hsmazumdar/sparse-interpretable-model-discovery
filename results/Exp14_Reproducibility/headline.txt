@@ -1,0 +1,3 @@
+Exp14: audited 13 experiment folders; 13 present; 988 seed runs scored.
+
+See INDEX.md and GAP_REPORT.md.

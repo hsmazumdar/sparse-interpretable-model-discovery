@@ -1,0 +1,2 @@
+Exp03 n=60: canonical 60/60 (100 %), structural 60/60, fidelity 60/60, near-zero b 60/60.
+Canonical k: mean=6.62598254  std=0.00299884  95% CI [6.62522372, 6.62674135]  best=6.61715193  worst=6.63093685  mean |k-2π|/2π=5.4558 % (n=60).

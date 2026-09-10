@@ -1,0 +1,12 @@
+{
+  "problem": "S1",
+  "noise": 0.05,
+  "seed": 14,
+  "structure_ok": true,
+  "canonical": true,
+  "max_rel_coeff_err": 0.00582848922096812,
+  "test_rmse": 0.0517595706809906,
+  "test_acc": null,
+  "fidelity_max": 2.66453525910038E-15,
+  "reason": "polynomial reduced; structure OK"
+}

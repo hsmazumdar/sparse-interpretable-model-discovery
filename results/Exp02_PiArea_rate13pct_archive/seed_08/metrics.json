@@ -1,0 +1,12 @@
+{
+  "seed": 8,
+  "canonical": false,
+  "structural": true,
+  "k_canonical": null,
+  "b": 0,
+  "k_ols": 3.1421703387058,
+  "pi_error": 0.000183882883526639,
+  "test_rmse": 371.688926640789,
+  "fidelity_max": 1.33226762955019E-15,
+  "reason": "non-canonical: square of degree>1 polynomial"
+}

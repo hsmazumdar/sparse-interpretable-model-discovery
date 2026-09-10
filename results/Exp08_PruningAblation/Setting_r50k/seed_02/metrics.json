@@ -1,0 +1,8 @@
+{
+  "setting": "r50k",
+  "retrain_cycles": 50000,
+  "canonical": true,
+  "val_loss": 3.11047145238355E-09,
+  "test_rmse": 21.1820821842027,
+  "final_edges": 2
+}

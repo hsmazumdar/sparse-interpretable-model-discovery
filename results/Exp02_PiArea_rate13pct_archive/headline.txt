@@ -1,0 +1,2 @@
+Exp02 n=5: canonical 5/5 (100 %), structural 5/5, fidelity 5/5, near-zero b 5/5.
+Canonical k: mean=3.14185703  std=9.7189E-05  95% CI [3.14177184, 3.14194222]  best=3.14172026  worst=3.14198164  mean |k-π|/π=0.0084 % (n=5).

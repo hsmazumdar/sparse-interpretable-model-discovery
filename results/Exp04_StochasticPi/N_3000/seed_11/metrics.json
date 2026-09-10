@@ -1,0 +1,11 @@
+{
+  "N": 3000,
+  "seed": 11,
+  "canonical": false,
+  "k_canonical": null,
+  "b": 0,
+  "k_ols": 3.115751695242,
+  "pi_error": 0.0082254325105674,
+  "test_rmse": 3723.01373719194,
+  "reason": "non-canonical: square of degree>1 polynomial"
+}

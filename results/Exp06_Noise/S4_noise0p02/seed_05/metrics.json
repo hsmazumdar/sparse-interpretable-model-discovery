@@ -1,0 +1,12 @@
+{
+  "problem": "S4",
+  "noise": 0.02,
+  "seed": 5,
+  "structure_ok": true,
+  "canonical": true,
+  "max_rel_coeff_err": 0.00552747139778334,
+  "test_rmse": 0.0211749980843306,
+  "test_acc": null,
+  "fidelity_max": 3.5527136788005E-15,
+  "reason": "installed diag OLS c0=0.201105 a=1.30124 b=0.799324 Lval=0.000173295"
+}
