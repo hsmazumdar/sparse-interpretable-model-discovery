@@ -38,10 +38,16 @@ namespace VnnBp.VnnBpLib
         public int connTypeNo = 0;
         public double eta = 0.01;
         public double etab = 0.01;
+        /// <summary>Max absolute weight/bias step. 0 leaves the update unchanged.</summary>
+        public double gradClip = 0.0;
+        /// <summary>Power path: physical input = gain * source output.</summary>
+        public double powerInputGain = 1.0;
+        /// <summary>Power path: neuron output = sign(a)*|a|^k / div.</summary>
+        public double powerOutputDiv = 1.0;
         /// <summary>Loss for gradient updates. Default MSE preserves legacy training behaviour.</summary>
         public LossType lossType = LossType.MeanSquaredError;
         public static string[] ihoName = new string[] { "in", "out", "hdn" };//ihono=> in=0, out=1, hidden=2
-        public static string[] funName = new string[] { "nil", "y=x", "exp+", "exp+-", "sqrt", "dly=1", "dly=d", "sq" }; // "sqrt"=QuadraticSigmoid (4); "sq"=QuadraticLinear (7)
+        public static string[] funName = new string[] { "nil", "y=x", "exp+", "exp+-", "sqrt", "dly=1", "dly=d", "sq", "prod", "pow" }; // "sqrt"=QuadraticSigmoid (4); "sq"=QuadraticLinear (7); prod=8; pow=9
         public static string[] connTypeName = new string[] { "No Conn", "In Layer Conn", "All Layer Conn", "Fully Conn", "Partly Conn" };
         public bool plotUpdate = false;
         public bool newUpdate = false;
@@ -822,13 +828,146 @@ namespace VnnBp.VnnBpLib
             }
         }
 
+        private double ClipStep(double step)
+        {
+            if (gradClip > 0.0)
+            {
+                if (step > gradClip) return gradClip;
+                if (step < -gradClip) return -gradClip;
+            }
+            return step;
+        }
+
+        /// <summary>
+        /// Up to two incoming edges with the largest absolute weight above 1e-8.
+        /// </summary>
+        private void BestIncoming(int dst, int want, int[] srcOut, int[] connOut, double[] wOut)
+        {
+            for (int t = 0; t < want; t++)
+            {
+                srcOut[t] = -1;
+                connOut[t] = -1;
+                wOut[t] = 0.0;
+            }
+            for (int c = 0; c < maxConnections; c++)
+            {
+                if (conn[c].dstNuNo != dst) continue;
+                int src = conn[c].srcNuNo;
+                if (src < 0 || src >= maxNeurons || src == 9999) continue;
+                double w = conn[c].wgt;
+                if (!NnMath.IsFinite(w) || Math.Abs(w) <= 1e-8) continue;
+                for (int t = 0; t < want; t++)
+                {
+                    bool better = srcOut[t] < 0
+                        || Math.Abs(w) > Math.Abs(wOut[t])
+                        || (Math.Abs(Math.Abs(w) - Math.Abs(wOut[t])) <= 1e-15 && c < connOut[t]);
+                    if (!better) continue;
+                    for (int u = want - 1; u > t; u--)
+                    {
+                        srcOut[u] = srcOut[u - 1];
+                        connOut[u] = connOut[u - 1];
+                        wOut[u] = wOut[u - 1];
+                    }
+                    srcOut[t] = src;
+                    connOut[t] = c;
+                    wOut[t] = w;
+                    break;
+                }
+            }
+        }
+
+        public void ProductSources(int dst, out int srcA, out int srcB)
+        {
+            int[] s = new int[2];
+            int[] c = new int[2];
+            double[] w = new double[2];
+            BestIncoming(dst, 2, s, c, w);
+            srcA = s[0];
+            srcB = s[1];
+        }
+
+        public void PowerSource(int dst, out int src, out double k, out int connIndex)
+        {
+            int[] s = new int[1];
+            int[] c = new int[1];
+            double[] w = new double[1];
+            BestIncoming(dst, 1, s, c, w);
+            src = s[0];
+            connIndex = c[0];
+            k = w[0];
+        }
+
+        private void BackpropSpecial(int dn, int sn)
+        {
+            short dFun = neuron[dn].funno;
+            double destDelta = neuron[dn].errout * NnMath.DyDzFromOutput(dFun, neuron[dn].nuOut);
+            if (dFun == 8)
+            {
+                int a, b;
+                ProductSources(dn, out a, out b);
+                if (sn == a && b >= 0)
+                    neuron[sn].errout += neuron[b].nuOut * destDelta;
+                else if (sn == b && a >= 0)
+                    neuron[sn].errout += neuron[a].nuOut * destDelta;
+                return;
+            }
+            int src;
+            double k;
+            int connK;
+            PowerSource(dn, out src, out k, out connK);
+            if (sn != src || src < 0) return;
+            double dpk, dpa;
+            NnMath.PowerSigned(neuron[src].nuOut, k, powerInputGain, powerOutputDiv, out dpk, out dpa);
+            if (NnMath.IsFinite(dpa))
+                neuron[sn].errout += destDelta * dpa;
+        }
+
+        private void ApplyPowerWeightStep(int connIndex, int dn)
+        {
+            int src;
+            double k;
+            int which;
+            PowerSource(dn, out src, out k, out which);
+            if (which != connIndex || src < 0) return;
+            double dpk, dpa;
+            NnMath.PowerSigned(neuron[src].nuOut, k, powerInputGain, powerOutputDiv, out dpk, out dpa);
+            if (!NnMath.IsFinite(dpk)) return;
+            double next = conn[connIndex].wgt - ClipStep(eta * neuron[dn].errin * dpk);
+            if (NnMath.IsFinite(next))
+                conn[connIndex].wgt = next;
+        }
+
         //**********************************************************
         /// <summary>
         /// Set neuron output from net input without mutating nuIn for overflow avoidance.
         /// funno 4 (legacy "sqrt") is QuadraticSigmoid: y = sigmoid(z).
+        /// funno 8 is the product of its two live inputs. funno 9 is sign(a)*|a|^k.
         /// </summary>
         private void SetNeuronOutputFromNetInput(int m)
         {
+            if (neuron[m].funno == 8)
+            {
+                int a, b;
+                ProductSources(m, out a, out b);
+                if (a >= 0 && b >= 0)
+                    neuron[m].nuOut = neuron[a].nuOut * neuron[b].nuOut;
+                else
+                    neuron[m].nuOut = 0.0;
+                neuron[m].nuIn = neuron[m].nuOut;
+                return;
+            }
+            if (neuron[m].funno == 9)
+            {
+                int src;
+                double k;
+                int connK;
+                PowerSource(m, out src, out k, out connK);
+                double aval = (src >= 0) ? neuron[src].nuOut : 0.0;
+                double dpk, dpa;
+                neuron[m].nuOut = NnMath.PowerSigned(aval, k, powerInputGain, powerOutputDiv, out dpk, out dpa);
+                neuron[m].nuIn = neuron[m].nuOut;
+                return;
+            }
             neuron[m].nuOut = NnMath.Activate(neuron[m].funno, neuron[m].nuIn);
         }
 
@@ -1007,6 +1146,11 @@ namespace VnnBp.VnnBpLib
                 short dFun = neuron[dn].funno;
                 if (dFun == 0 || dFun == 5 || dFun == 6)
                     continue;
+                if (dFun == 8 || dFun == 9)
+                {
+                    BackpropSpecial(dn, sn);
+                    continue;
+                }
 
                 double destDelta;
                 if (lossType == LossType.BinaryCrossEntropy && neuron[dn].ihono == NuType.Out)
@@ -1052,28 +1196,34 @@ namespace VnnBp.VnnBpLib
                 dn = conn[n].dstNuNo;
                 sn = conn[n].srcNuNo;
                 short dFun = neuron[dn].funno;
-                if (dFun == 0 || dFun == 5 || dFun == 6)
+                if (dFun == 0 || dFun == 5 || dFun == 6 || dFun == 8)
                     continue;
+                if (dFun == 9)
+                {
+                    ApplyPowerWeightStep(n, dn);
+                    continue;
+                }
                 if (NnMath.UsesCenteredSquareInputs(dFun))
                 {
                     double centeredSource = neuron[sn].nuOut - NnMath.Centre;
-                    conn[n].wgt -= eta * neuron[dn].errin * centeredSource * centeredSource;
+                    conn[n].wgt -= ClipStep(eta * neuron[dn].errin * centeredSource * centeredSource);
                 }
                 else if (NnMath.UsesUncenteredSquareInputs(dFun))
                 {
                     double ySrc = neuron[sn].nuOut;
-                    conn[n].wgt -= eta * neuron[dn].errin * ySrc * ySrc;
+                    conn[n].wgt -= ClipStep(eta * neuron[dn].errin * ySrc * ySrc);
                 }
                 else
                 {
                     // Ordinary connection: dL/dw = delta_j * y_i (also for centred-sigmoid destinations)
-                    conn[n].wgt -= eta * neuron[dn].errin * neuron[sn].nuOut;
+                    conn[n].wgt -= ClipStep(eta * neuron[dn].errin * neuron[sn].nuOut);
                 }
             }
             for (n = 0; n < maxNeurons; n++)
             {
-                if (neuron[n].ihono != NuType.In)
-                    neuron[n].bias -= etab * neuron[n].errin;
+                if (neuron[n].ihono == NuType.In) continue;
+                if (neuron[n].funno == 8 || neuron[n].funno == 9) continue;
+                neuron[n].bias -= ClipStep(etab * neuron[n].errin);
             }
             return er;
         }
@@ -1751,7 +1901,7 @@ namespace VnnBp.VnnBpLib
             for (int i = 0; i < maxNeurons; i++)
             {
                 // funno 7 = QuadraticLinear (uncentered square inputs); must be accepted
-                if (neuron[i].funno < 0 || neuron[i].funno > 7)
+                if (neuron[i].funno < 0 || neuron[i].funno > 9)
                 {
                     result.IsValid = false;
                     result.Messages.Add("Neuron " + i + " has unrecognized funno.");
@@ -1787,6 +1937,39 @@ namespace VnnBp.VnnBpLib
             {
                 if (neuron[j].ihono == NuType.In)
                     continue;
+                if (neuron[j].funno == 8)
+                {
+                    int a, b;
+                    ProductSources(j, out a, out b);
+                    if (a >= 0 && b >= 0)
+                        sb.AppendFormat(System.Globalization.CultureInfo.InvariantCulture, "n{0} = n{1}*n{2}\r\n", j, a, b);
+                    else
+                        sb.AppendFormat(System.Globalization.CultureInfo.InvariantCulture, "n{0} = 0\r\n", j);
+                    continue;
+                }
+                if (neuron[j].funno == 9)
+                {
+                    int src;
+                    double k;
+                    int connK;
+                    PowerSource(j, out src, out k, out connK);
+                    if (src < 0)
+                    {
+                        sb.AppendFormat(System.Globalization.CultureInfo.InvariantCulture, "n{0} = 0\r\n", j);
+                        continue;
+                    }
+                    string srcName = "n" + src.ToString(System.Globalization.CultureInfo.InvariantCulture);
+                    string inside = srcName;
+                    if (Math.Abs(powerInputGain - 1.0) > 1e-12)
+                        inside = srcName + "*" + powerInputGain.ToString("G6", System.Globalization.CultureInfo.InvariantCulture);
+                    string divTxt = "";
+                    if (Math.Abs(powerOutputDiv - 1.0) > 1e-12)
+                        divTxt = "/" + powerOutputDiv.ToString("G6", System.Globalization.CultureInfo.InvariantCulture);
+                    sb.AppendFormat(System.Globalization.CultureInfo.InvariantCulture,
+                        "n{0} = sign({1})*|{2}|^{3}{4} a^k\r\n",
+                        j, srcName, inside, k.ToString("R", System.Globalization.CultureInfo.InvariantCulture), divTxt);
+                    continue;
+                }
                 System.Text.StringBuilder terms = new System.Text.StringBuilder();
                 terms.AppendFormat(System.Globalization.CultureInfo.InvariantCulture,
                     "{0:G15}", neuron[j].bias);

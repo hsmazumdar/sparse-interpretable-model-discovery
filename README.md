@@ -18,8 +18,8 @@ It is not ordinary weight compression. The measured claim is whether the pruned 
 | `docs/METHOD.md` | Operators, prune rule, Pass-E strip |
 | `docs/CHECKPOINT_RESUME.md` | Short resume (no paper file) |
 | `results/` | Authoritative run folders (never invent numbers) |
-| `src/NnPruneHsm/` | C# source used for Exp01–20 (no `bin` / `obj`) |
-| `scripts/` | Python Exp11/14–20 helpers + Exp02 reproduce wrapper |
+| `src/NnPruneHsm/` | C# source used for Exp01–25 (no `bin` / `obj`) |
+| `scripts/` | Python Exp11/14–25 helpers + Exp02 reproduce wrapper |
 
 **π is never used to generate labels.** Pixel counts and perimeters come from geometry or Monte Carlo. π is scored only after a model is frozen (Exp19).
 
@@ -39,7 +39,7 @@ msbuild NnPruneHsm.csproj /p:Configuration=Debug /p:Platform=x86
 .\bin\Debug\NnPruneHsm.exe --exp02 --out ..\..\results\Exp02_PiArea
 ```
 
-CLI in this snapshot: `--exp01` … `--exp20` (Exp14–20 also have Python entry points under `scripts/`).
+CLI in this snapshot: `--exp01` … `--exp20`, `--exp22`, `--exp23`, `--exp25` (Exp14–25 also have Python entry points under `scripts/`).
 
 ## Experiment status
 
@@ -61,6 +61,13 @@ CLI in this snapshot: `--exp01` … `--exp20` (Exp14–20 also have Python entry
 | 14–15 | `results/Exp14_Reproducibility/`, `Exp15_ManuscriptTables/` | Archive audit + Tables A–J |
 | 16 Figures | `results/Exp16_Figures/` | 11 PNG/PDF from CSVs |
 | 17–20 | `results/Exp17_Statistics/` … `Exp20_ManuscriptGates/` | CIs; criteria; π-policy; 10/10 gates |
+| 21 Same-split Exp12 | `results/Exp21_SymbolicSameSplit/` | diag: graph 10/10, SINDy 10/10; cross/mixed: graph 0/10, SINDy 10/10 |
+| 22 Known laws | `results/Exp22_KnownLaws/` | σ=0: L1 20/20, L2 20/20, L3 0/20, L4 0/20 (graph); SINDy 20/20/20/0; gplearn+sin wins L4 |
+| 23 Kepler | `results/Exp23_Kepler/` | log–log 20/20, gplearn 15/20, SINDy 0/20, graph 0/20 |
+| 24 SINDy libraries | `results/Exp24_SINDyLibraryMismatch/` | L1/L2 need x1², x2² in the library (0/20 without, 20/20 with) |
+| 25 Product/power | `results/Exp25_OperatorExtension/` | L3 0/20 → 14–16/20 with a fixed x1·x2 feature; Kepler 2/20 with power path; export check 710/710 |
+
+`results/SUMMARY_Exp24_25.md` summarises Exp24–25. For Exp21–25 only the cell-level files are mirrored (`seed_logs.csv`, `PROTOCOL.md`, `INDEX.md`, `headline.txt`, `CLIP.txt`, and small supporting CSVs); the per-seed folders (splits, predictions, exports) stay in the research tree. In those logs the method value `hsm` is the heterogeneous quadratic neural graph (HQNG).
 
 Do not treat a best seed as the result. Structure-recovery **frequency** is the headline metric. Denominators retain every planned run.
 

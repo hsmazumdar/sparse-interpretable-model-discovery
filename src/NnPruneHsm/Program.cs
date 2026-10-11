@@ -168,6 +168,24 @@ namespace VnnBp
                     Environment.ExitCode = code;
                     return;
                 }
+                if (cmd == "--exp22" || cmd == "/exp22" || cmd == "--exp-22")
+                {
+                    int code = Exp22Runner.Run(args);
+                    Environment.ExitCode = code;
+                    return;
+                }
+                if (cmd == "--exp23" || cmd == "/exp23" || cmd == "--exp-23")
+                {
+                    int code = Exp23Runner.Run(args);
+                    Environment.ExitCode = code;
+                    return;
+                }
+                if (cmd == "--exp25" || cmd == "/exp25" || cmd == "--exp-25")
+                {
+                    int code = Exp25Runner.Run(args);
+                    Environment.ExitCode = code;
+                    return;
+                }
                 if (cmd == "--exp19-20" || cmd == "--exp-19-20")
                 {
                     int c1 = Exp19Runner.Run(args);
@@ -188,6 +206,9 @@ namespace VnnBp
                     Console.WriteLine("  --exp19           pi never used as train/prune objective");
                     Console.WriteLine("  --exp20           manuscript rewrite minimum gates");
                     Console.WriteLine("  --exp19-20        run Exp19 then Exp20");
+                    Console.WriteLine("  --exp22           four known laws (HSM graph)");
+                    Console.WriteLine("  --exp23           Kepler folds (after exp23_kepler.py)");
+                    Console.WriteLine("  --exp25           product and power operators");
                     Console.WriteLine("  Data are generated WITHOUT Math.PI.");
                     return;
                 }

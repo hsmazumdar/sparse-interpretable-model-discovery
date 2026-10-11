@@ -98,6 +98,8 @@
             <Compile Include="NnBpLib\Exp18Runner.cs" />
             <Compile Include="NnBpLib\Exp19Runner.cs" />
             <Compile Include="NnBpLib\Exp20Runner.cs" />
+            <Compile Include="NnBpLib\Exp22Runner.cs" />
+            <Compile Include="NnBpLib\Exp25Runner.cs" />
             <Compile Include="NnBpLib\EquationExport.cs" />
             <Compile Include="NnBpLib\SyntheticProblems.cs" />
             <Compile Include="NnBpLib\CircleDataGenerator.cs" />

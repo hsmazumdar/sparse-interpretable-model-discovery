@@ -1,0 +1,2 @@
+gradient_clip=0.5
+reason=nonfinite 7 of 20

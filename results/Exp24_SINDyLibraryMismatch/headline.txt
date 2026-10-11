@@ -1,0 +1,56 @@
+Exp24 SINDy libraries vs HSM (term recovery, mean coeff rel, mean clean RMSE)
+
+L1 noise 0 hsm: recovery 20/20, coeff 1.93179e-15, rmse 2.18944e-15, L2expanded 
+L1 noise 0 deg1: recovery 0/20, coeff 1, rmse 0.406837, L2expanded 
+L1 noise 0 deg2_no_cross: recovery 20/20, coeff 5.32907e-16, rmse 3.55439e-16, L2expanded 
+L1 noise 0 deg2_no_squares: recovery 0/20, coeff 1, rmse 0.407393, L2expanded 
+L1 noise 0 generic: recovery 0/20, coeff 1, rmse 0.000822384, L2expanded 
+L1 noise 0 deg3: recovery 20/20, coeff 5.32907e-16, rmse 3.56084e-16, L2expanded 
+L1 noise 0.02 hsm: recovery 20/20, coeff 0.00202741, rmse 0.00122112, L2expanded 
+L1 noise 0.02 deg1: recovery 0/20, coeff 1, rmse 0.405403, L2expanded 
+L1 noise 0.02 deg2_no_cross: recovery 20/20, coeff 0.00152742, rmse 0.00108568, L2expanded 
+L1 noise 0.02 deg2_no_squares: recovery 0/20, coeff 1, rmse 0.405092, L2expanded 
+L1 noise 0.02 generic: recovery 0/20, coeff 1, rmse 0.00176805, L2expanded 
+L1 noise 0.02 deg3: recovery 20/20, coeff 0.0016209, rmse 0.00117301, L2expanded 
+L1 noise 0.05 hsm: recovery 20/20, coeff 0.00511717, rmse 0.00280509, L2expanded 
+L1 noise 0.05 deg1: recovery 0/20, coeff 1, rmse 0.429674, L2expanded 
+L1 noise 0.05 deg2_no_cross: recovery 20/20, coeff 0.0049248, rmse 0.00277757, L2expanded 
+L1 noise 0.05 deg2_no_squares: recovery 0/20, coeff 1, rmse 0.428248, L2expanded 
+L1 noise 0.05 generic: recovery 0/20, coeff 1, rmse 0.00378174, L2expanded 
+L1 noise 0.05 deg3: recovery 20/20, coeff 0.00458253, rmse 0.00279297, L2expanded 
+L2 noise 0 hsm: recovery 20/20, coeff 0.00186898, rmse 0.00180419, L2expanded 20/20
+L2 noise 0 deg1: recovery 0/20, coeff 1.0334, rmse 0.410924, L2expanded 0/20
+L2 noise 0 deg2_no_cross: recovery 20/20, coeff 8.56955e-16, rmse 8.54334e-16, L2expanded 20/20
+L2 noise 0 deg2_no_squares: recovery 0/20, coeff 1.03351, rmse 0.411106, L2expanded 0/20
+L2 noise 0 generic: recovery 0/20, coeff 4.51629, rmse 0.000823212, L2expanded 0/20
+L2 noise 0 deg3: recovery 20/20, coeff 8.56955e-16, rmse 8.5497e-16, L2expanded 20/20
+L2 noise 0.02 hsm: recovery 18/20, coeff 0.00842174, rmse 0.00613262, L2expanded 18/20
+L2 noise 0.02 deg1: recovery 0/20, coeff 1.00741, rmse 0.419823, L2expanded 0/20
+L2 noise 0.02 deg2_no_cross: recovery 20/20, coeff 0.00390205, rmse 0.00214456, L2expanded 20/20
+L2 noise 0.02 deg2_no_squares: recovery 0/20, coeff 1.00648, rmse 0.419095, L2expanded 0/20
+L2 noise 0.02 generic: recovery 0/20, coeff 4.53774, rmse 0.00274755, L2expanded 0/20
+L2 noise 0.02 deg3: recovery 20/20, coeff 0.00426404, rmse 0.00238626, L2expanded 20/20
+L2 noise 0.05 hsm: recovery 18/20, coeff 0.0179103, rmse 0.0145231, L2expanded 18/20
+L2 noise 0.05 deg1: recovery 0/20, coeff 1.03089, rmse 0.420905, L2expanded 0/20
+L2 noise 0.05 deg2_no_cross: recovery 20/20, coeff 0.0116681, rmse 0.0063084, L2expanded 20/20
+L2 noise 0.05 deg2_no_squares: recovery 0/20, coeff 1.03084, rmse 0.420979, L2expanded 0/20
+L2 noise 0.05 generic: recovery 0/20, coeff 4.4435, rmse 0.00831574, L2expanded 0/20
+L2 noise 0.05 deg3: recovery 20/20, coeff 0.0124803, rmse 0.00687649, L2expanded 20/20
+L3 noise 0 hsm: recovery 0/20, coeff 0.000763912, rmse 0.00243557, L2expanded 
+L3 noise 0 deg1: recovery 0/20, coeff 1, rmse 1.37884, L2expanded 
+L3 noise 0 deg2_no_cross: recovery 0/20, coeff 0.361636, rmse 0.640425, L2expanded 
+L3 noise 0 deg2_no_squares: recovery 0/20, coeff 0.685325, rmse 1.21174, L2expanded 
+L3 noise 0 generic: recovery 0/20, coeff 1, rmse 0.650029, L2expanded 
+L3 noise 0 deg3: recovery 20/20, coeff 7.90109e-16, rmse 1.37003e-15, L2expanded 
+L3 noise 0.02 hsm: recovery 0/20, coeff 0.00877992, rmse 0.0150794, L2expanded 
+L3 noise 0.02 deg1: recovery 0/20, coeff 1, rmse 1.37197, L2expanded 
+L3 noise 0.02 deg2_no_cross: recovery 0/20, coeff 0.379197, rmse 0.679574, L2expanded 
+L3 noise 0.02 deg2_no_squares: recovery 0/20, coeff 0.704489, rmse 1.24974, L2expanded 
+L3 noise 0.02 generic: recovery 0/20, coeff 1, rmse 0.684542, L2expanded 
+L3 noise 0.02 deg3: recovery 20/20, coeff 0.000976111, rmse 0.00216258, L2expanded 
+L3 noise 0.05 hsm: recovery 0/20, coeff 0.01642, rmse 0.0266801, L2expanded 
+L3 noise 0.05 deg1: recovery 0/20, coeff 1, rmse 1.35272, L2expanded 
+L3 noise 0.05 deg2_no_cross: recovery 0/20, coeff 0.359392, rmse 0.642474, L2expanded 
+L3 noise 0.05 deg2_no_squares: recovery 0/20, coeff 0.68415, rmse 1.18503, L2expanded 
+L3 noise 0.05 generic: recovery 0/20, coeff 1, rmse 0.647872, L2expanded 
+L3 noise 0.05 deg3: recovery 20/20, coeff 0.0019638, rmse 0.0023068, L2expanded 

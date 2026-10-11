@@ -1,13 +1,14 @@
 # Live experiment status
 
-Last update: 2026-09-09 22:12 IST  
-Mirror sync: code, results, figures, prior-art freeze. Unpublished manuscript is **not** in this folder.
+Last update: 2026-10-11 IST  
+Mirror sync: code, results, figures, prior-art freeze, Exp21–25 comparison study. Unpublished manuscript is **not** in this folder.
 
 | Experiment | Status | Degree of success |
 |------------|--------|-------------------|
 | 01–18 | complete | see `results/` |
 | 19 π-never-objective | complete | see Exp19 |
 | 20 Manuscript gates | complete | minimum PASS; rewrite ALLOWED |
+| 21–25 Same-split comparison (SINDy, gplearn, Kepler, operator extension) | complete | see `results/Exp21_…` to `Exp25_…` and `results/SUMMARY_Exp24_25.md` |
 | Appendix A item 10 prior-art | **frozen** | `docs/PRIOR_ART.md`; joint-pipeline novelty only |
 | Exp16 figures | mirrored | 11 PNG + 11 PDF |
 

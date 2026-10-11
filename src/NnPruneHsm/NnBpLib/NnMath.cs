@@ -161,6 +161,8 @@ namespace VnnBp.VnnBpLib
                 case 5:
                 case 6:
                 case 7: // QuadraticLinear: identity on z
+                case 8: // product p = y_a * y_b (output already set by the net)
+                case 9: // power y = sign(a) * |a|^k / scale
                     return z;
                 case 2:
                 case 4: // QuadraticSigmoid: y = sigmoid(z)
@@ -183,6 +185,8 @@ namespace VnnBp.VnnBpLib
                 case 5:
                 case 6:
                 case 7:
+                case 8:
+                case 9:
                     return 1.0;
                 case 2:
                 case 4:
@@ -214,6 +218,39 @@ namespace VnnBp.VnnBpLib
         public static bool IsSigmoidActivation(short funno)
         {
             return funno == 2 || funno == 3 || funno == 4;
+        }
+
+        /// <summary>
+        /// sign(gain*a) * |gain*a|^k / div, with the exponent clipped to [-8, 8]
+        /// so the exponential stays finite. Derivatives are zero on the clip.
+        /// </summary>
+        public static double PowerSigned(double a, double k, double gain, double div, out double dPdK, out double dPdA)
+        {
+            if (!(div > 1e-12)) div = 1.0;
+            if (!(gain > 0.0)) gain = 1.0;
+            double src = gain * a;
+            double mag = Math.Abs(src);
+            if (mag < 1e-8) mag = 1e-8;
+            double loga = Math.Log(mag);
+            double z = k * loga;
+            bool clipped = false;
+            if (z > 8.0) { z = 8.0; clipped = true; }
+            if (z < -8.0) { z = -8.0; clipped = true; }
+            double p = Math.Exp(z);
+            if (src < 0.0) p = -p;
+            p = p / div;
+            if (clipped || !IsFinite(p))
+            {
+                dPdK = 0.0;
+                dPdA = 0.0;
+                if (!IsFinite(p)) p = 0.0;
+                return p;
+            }
+            dPdK = p * loga;
+            double aa = src;
+            if (Math.Abs(aa) < 1e-8) aa = src < 0.0 ? -1e-8 : 1e-8;
+            dPdA = gain * k * p / aa;
+            return p;
         }
     }
 }

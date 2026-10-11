@@ -24,5 +24,14 @@ Exp02 (C# only, mirror-native):
 | `exp18_criteria.py` | Success-criteria freeze audit |
 | `exp19_pi_policy.py` | π-never-objective audit |
 | `exp20_manuscript_gates.py` | Minimum rewrite gates |
+| `sr_common.py` | Shared scoring for Exp21–25 (tolerances, SINDy STLSQ, gplearn, readout) |
+| `exp21_same_split.py` | SINDy and gplearn on the frozen Exp12 splits |
+| `exp22_score.py` | Scores the four known laws (run after `--exp22`) |
+| `exp23_kepler.py` | Kepler data, log–log, SINDy, gplearn (then `--exp23`) |
+| `exp24_sindy_libraries.py` | SINDy library-mismatch refits on the Exp22 splits |
+| `exp25_score.py` | Scores the product/power banks (run after `--exp25`) |
+| `exp25_export_check.py` | Text-parses every Exp25 export and compares it with `pred_grid.csv` |
+
+The Exp21–25 scripts resolve paths relative to their own folder (`<script dir>/Results/...`), so copy them to the research-tree root next to `Results/` before running. They need Python 3 with numpy, scikit-learn and gplearn 0.4.3.
 
 Do **not** place `Nn2MathModelV0N.docx` or `_build_Nn2MathModelV0N.py` in this mirror. The paper draft stays on the local research tree only.

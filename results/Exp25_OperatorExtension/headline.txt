@@ -1,0 +1,58 @@
+Exp25 operator extension
+
+original L1 0: recovery 20/20, product 0/20, power 0/20, diverged 0/20, coeff 1.93179e-15, rmse 2.18944e-15, clip 0
+original L1 0.02: recovery 20/20, product 0/20, power 0/20, diverged 0/20, coeff 0.00202741, rmse 0.00122112, clip 0
+original L1 0.05: recovery 20/20, product 0/20, power 0/20, diverged 0/20, coeff 0.00511717, rmse 0.00280509, clip 0
+original L2 0: recovery 20/20, product 0/20, power 0/20, diverged 0/20, coeff 0.00186898, rmse 0.00180419, clip 0
+original L2 0.02: recovery 18/20, product 0/20, power 0/20, diverged 2/20, coeff 0.00842174, rmse 0.00613262, clip 0
+original L2 0.05: recovery 18/20, product 0/20, power 0/20, diverged 2/20, coeff 0.0179103, rmse 0.0145231, clip 0
+original L3 0: recovery 0/20, product 0/20, power 0/20, diverged 11/20, coeff 0.000763912, rmse 0.00243557, clip 0
+original L3 0.02: recovery 0/20, product 0/20, power 0/20, diverged 9/20, coeff 0.00877992, rmse 0.0150794, clip 0
+original L3 0.05: recovery 0/20, product 0/20, power 0/20, diverged 11/20, coeff 0.01642, rmse 0.0266801, clip 0
+original L4 0: recovery 0/20, product 0/20, power 0/20, diverged 0/20, coeff 0.500621, rmse 0.00279823, clip 0
+original L4 0.02: recovery 0/20, product 0/20, power 0/20, diverged 0/20, coeff 0.502408, rmse 0.00781335, clip 0
+original L4 0.05: recovery 0/20, product 0/20, power 0/20, diverged 0/20, coeff 0.506025, rmse 0.0236297, clip 0
+original Kepler holdout: recovery 0/20, product 0/20, power 0/20, diverged 5/20, coeff 1, rmse 12.1036, clip 0
+product L1 0: recovery 20/20, product 0/20, power 0/20, diverged 0/20, coeff 2.32869e-15, rmse 2.10549e-15, clip 0
+product L1 0.02: recovery 20/20, product 0/20, power 0/20, diverged 0/20, coeff 0.00202741, rmse 0.00122112, clip 0
+product L1 0.05: recovery 19/20, product 1/20, power 0/20, diverged 1/20, coeff 0.00512525, rmse 0.00281454, clip 0
+product L2 0: recovery 20/20, product 18/20, power 0/20, diverged 0/20, coeff 0.00261423, rmse 0.00201832, clip 0
+product L2 0.02: recovery 19/20, product 6/20, power 0/20, diverged 1/20, coeff 0.00908275, rmse 0.00744481, clip 0
+product L2 0.05: recovery 17/20, product 7/20, power 0/20, diverged 3/20, coeff 0.0181764, rmse 0.0136398, clip 0
+product L3 0: recovery 15/20, product 20/20, power 0/20, diverged 5/20, coeff 0.000838888, rmse 0.00257333, clip 1
+product L3 0.02: recovery 14/20, product 20/20, power 0/20, diverged 6/20, coeff 0.00298589, rmse 0.00755327, clip 1
+product L3 0.05: recovery 15/20, product 20/20, power 0/20, diverged 5/20, coeff 0.00764033, rmse 0.0164181, clip 0
+product L4 0: recovery 0/20, product 17/20, power 0/20, diverged 0/20, coeff 0.500749, rmse 0.0025931, clip 0
+product L4 0.02: recovery 0/20, product 5/20, power 0/20, diverged 0/20, coeff 0.502119, rmse 0.00808485, clip 0
+product L4 0.05: recovery 0/20, product 3/20, power 0/20, diverged 0/20, coeff 0.506696, rmse 0.0239441, clip 0
+product Kepler holdout: recovery 0/20, product 14/20, power 0/20, diverged 1/20, coeff , rmse 7.58476, clip 0
+power L1 0: recovery 20/20, product 0/20, power 0/20, diverged 0/20, coeff 2.32869e-15, rmse 2.10549e-15, clip 0
+power L1 0.02: recovery 20/20, product 0/20, power 0/20, diverged 0/20, coeff 0.00202741, rmse 0.00122112, clip 0
+power L1 0.05: recovery 20/20, product 0/20, power 0/20, diverged 0/20, coeff 0.00511717, rmse 0.00280509, clip 0
+power L2 0: recovery 20/20, product 0/20, power 20/20, diverged 0/20, coeff 0.00196412, rmse 0.0018378, clip 0
+power L2 0.02: recovery 19/20, product 0/20, power 18/20, diverged 1/20, coeff 0.00796446, rmse 0.006756, clip 0
+power L2 0.05: recovery 18/20, product 0/20, power 18/20, diverged 2/20, coeff 0.0178895, rmse 0.0143214, clip 0
+power L3 0: recovery 0/20, product 0/20, power 19/20, diverged 9/20, coeff 0.00105484, rmse 0.00331124, clip 1
+power L3 0.02: recovery 0/20, product 0/20, power 15/20, diverged 15/20, coeff 0.00419028, rmse 0.0103951, clip 1
+power L3 0.05: recovery 0/20, product 0/20, power 11/20, diverged 7/20, coeff 0.0155854, rmse 0.0245747, clip 1
+power L4 0: recovery 0/20, product 0/20, power 19/20, diverged 0/20, coeff 0.500796, rmse 0.00448898, clip 0
+power L4 0.02: recovery 0/20, product 0/20, power 17/20, diverged 0/20, coeff 0.50238, rmse 0.0100976, clip 0
+power L4 0.05: recovery 0/20, product 0/20, power 14/20, diverged 0/20, coeff 0.505186, rmse 0.0176597, clip 0
+power Kepler holdout: recovery 2/20, product 0/20, power 16/20, diverged 0/20, coeff 0.255498, rmse 11.6864, clip 0
+both L1 0: recovery 20/20, product 0/20, power 0/20, diverged 0/20, coeff 2.32869e-15, rmse 2.10549e-15, clip 0
+both L1 0.02: recovery 20/20, product 0/20, power 0/20, diverged 0/20, coeff 0.00202741, rmse 0.00122112, clip 0
+both L1 0.05: recovery 20/20, product 0/20, power 0/20, diverged 0/20, coeff 0.00511717, rmse 0.00280509, clip 0
+both L2 0: recovery 20/20, product 17/20, power 19/20, diverged 0/20, coeff 0.002467, rmse 0.00209806, clip 0
+both L2 0.02: recovery 19/20, product 5/20, power 16/20, diverged 1/20, coeff 0.00938966, rmse 0.00752883, clip 0
+both L2 0.05: recovery 19/20, product 5/20, power 18/20, diverged 0/20, coeff 0.0230046, rmse 0.0176147, clip 0
+both L3 0: recovery 16/20, product 20/20, power 18/20, diverged 4/20, coeff 0.000542694, rmse 0.00233849, clip 0
+both L3 0.02: recovery 15/20, product 20/20, power 9/20, diverged 5/20, coeff 0.00313675, rmse 0.00709018, clip 0
+both L3 0.05: recovery 16/20, product 20/20, power 4/20, diverged 4/20, coeff 0.00904, rmse 0.0163989, clip 0
+both L4 0: recovery 0/20, product 8/20, power 20/20, diverged 0/20, coeff 0.501098, rmse 0.00581701, clip 0
+both L4 0.02: recovery 0/20, product 5/20, power 17/20, diverged 0/20, coeff 0.502005, rmse 0.0106293, clip 0
+both L4 0.05: recovery 0/20, product 2/20, power 17/20, diverged 0/20, coeff 0.505801, rmse 0.0178146, clip 0
+both Kepler holdout: recovery 2/20, product 6/20, power 19/20, diverged 0/20, coeff 0.248586, rmse 13.8153, clip 0
+
+Export check (exp25_export_check.py, export_check.csv): each exported_equation.txt was evaluated as text on the saved grid and compared with pred_grid.csv. 710 of 780 seeds are finite and all 710 match (max abs difference 1.82e-12). The other 70 are non-finite networks and stay in the denominators above.
+
+Cells with more than 5 non-finite seeds out of 20 were rerun once with a maximum step of 0.5 (CLIP.txt in that cell): product L3 noise 0 and 0.02; power L3 noise 0, 0.02, 0.05. The table reports the clipped reruns for those cells.

@@ -428,5 +428,73 @@ namespace VnnBp.VnnBpLib
             }
             return n;
         }
+
+        /// <summary>
+        /// Turn the last hidden units into product (funno 8) and/or power (funno 9).
+        /// A product unit is wired to the two inputs with weight 1 and computes y_a*y_b.
+        /// A power unit is wired to one input with weight 1 (the learned exponent).
+        /// </summary>
+        public static void InstallOperatorExtension(VnnBpNet net, int nProduct, int nPower)
+        {
+            if (nProduct < 0) nProduct = 0;
+            if (nPower < 0) nPower = 0;
+            int nH = 0;
+            int[] hidden = new int[net.maxNeurons];
+            for (int i = 0; i < net.maxNeurons; i++)
+            {
+                if (net.neuron[i].ihono == NuType.Hdn)
+                    hidden[nH++] = i;
+            }
+            int in0 = net.inputs[0].sno;
+            int in1 = net.inputs.Length > 1 ? net.inputs[1].sno : in0;
+            int cursor = nH - nProduct - nPower;
+            if (cursor < 0) cursor = 0;
+            for (int t = 0; t < nProduct && cursor < nH; t++, cursor++)
+            {
+                int h = hidden[cursor];
+                net.neuron[h].funno = 8;
+                net.neuron[h].bias = 0.0;
+                ZeroIncoming(net, h);
+                SetEdge(net, in0, h, 1.0);
+                SetEdge(net, in1, h, 1.0);
+            }
+            for (int t = 0; t < nPower && cursor < nH; t++, cursor++)
+            {
+                int h = hidden[cursor];
+                net.neuron[h].funno = 9;
+                net.neuron[h].bias = 0.0;
+                ZeroIncoming(net, h);
+                int src = (t % 2 == 0) ? in0 : in1;
+                SetEdge(net, src, h, 1.0);
+            }
+        }
+
+        public static void SetEdgesFromFunno(VnnBpNet net, short srcFunno, double weight)
+        {
+            int output = net.outputs[0].sno;
+            for (int i = 0; i < net.maxNeurons; i++)
+            {
+                if (net.neuron[i].funno != srcFunno) continue;
+                SetEdge(net, i, output, weight);
+            }
+        }
+
+        private static void ZeroIncoming(VnnBpNet net, int dst)
+        {
+            for (int c = 0; c < net.maxConnections; c++)
+            {
+                if (net.conn[c].dstNuNo == dst)
+                    net.conn[c].wgt = 0.0;
+            }
+        }
+
+        private static void SetEdge(VnnBpNet net, int src, int dst, double weight)
+        {
+            for (int c = 0; c < net.maxConnections; c++)
+            {
+                if (net.conn[c].srcNuNo == src && net.conn[c].dstNuNo == dst)
+                    net.conn[c].wgt = weight;
+            }
+        }
     }
 }
